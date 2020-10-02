@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+</head>
+<body>
+    <div> Market Research Survey</div>
+    <div style="font-weight:lighter;font-size: 10px"> Please take a few moments to complete this satisfaction survey.</div>
+    <br>
+    <label style="font-size: 12px;font-weight: bolder"> What is your age range?</label>
+    <br>
+    <select style="width: 300px">
+        <option name=" " style="font-size: 10px">18-24</option>
+        <option style="font-size: 10px">25-34 </option>
+        <option style="font-size: 10px">35-50 </option>
+        <option>50+ </option>
+    </select>
+    <br>
+    <br>
+    <label style="font-size: 12px;font-weight: bolder"> What is your yearly income range? </label>
+    <br>
+    <select style="width: 300px">
+        <option name=" " style="font-size: 10px">$0 - $25,000</option>
+        <option style="font-size: 10px">$25,001 - %50,000 </option>
+        <option style="font-size: 10px">$50,001 - $100,000</option>
+        <option style="font-size: 10px">$100,000+ </option>
+    </select>
+    <div> Gender Identity </div>
+    <input type="radio" style="font-size: 10px">Male<br>
+    <input type="radio" style="font-size: 10px">Female<br>
+    <input type="radio" style="font-size: 10px">Nonbinary<br>
+    <input type="radio" style="font-size: 10px">Other<br><!--
+    <input type="text" maxlength="250"><br> -->
+    <input type="text" id="username" name="username" maxlength="250"><br><br>
+    <label> Maximum of <span>250</span> characters.</label>
+    <label>Currently Used: 0 characters. </label><br>
+<!-- chưa xử lí đếm-->
+    <br>
+    <div style="font-weight: bolder;font-size: 12px"> Which of the following products have your purchased in the last 2 months. Please check all that apply. </div>
+    <input type="checkbox" style="font-sizes:10px"> Product 1<br>
+    <input type="checkbox" style="font-size: 10px"> Product 2<br>
+    <input type="checkbox" style="font-size: 10px"> Product 3<br>
+    <div style="font-weight: bolder;font-size: 12px"> How often would you use our new product</div>
+    <input type="radio" style="font-size: 10px">Daily<br>
+    <input type="radio" style="font-size: 10px">Weekly<br>
+    <input type="radio" style="font-size: 10px">Monthly<br>
+    <div>what would you pay for the new product?</div>
+    $<input type="text" style="width: 50px">
+    <input type="text" style="width: 10px">
+    <br>
+    <label style="font-weight: bolder;font-size: 12px"> what features would you like to see in the new product</label>
+    <br>
+    <textarea style="width: 300px"></textarea>
+    <div style="font-size: 12px;font-weight: lighter">please rate your level of agreement with the following statements</div>
+    <table border>
+        <tr>
+            <th> </th>
+            <th> Strongly Disagree</th>
+            <th> Disagree</th>
+            <th> Agree</th>
+            <th> Strongly Agree</th>
+        </tr>
+        <tr>
+            <th> Our products are priced faily.</th>
+            <th> <input type="radio" name="pr">1</th>
+            <th> <input type="radio" name="pr">2</th>
+            <th> <input type="radio" name="pr">3</th>
+            <th> <input type="radio" name="pr">4</th>
+        </tr>
+        <tr>
+            <th> Our products are high quality.</th>
+            <th> <input type="radio" name="pr">1</th>
+            <th> <input type="radio" name="pr">2</th>
+            <th> <input type="radio" name="pr">3</th>
+            <th> <input type="radio" name="pr">4</th>
+        </tr>
+        <tr>
+            <th style="width: 300px"> You would recommend our product to a friend or coworker.</th>
+            <th> <input type="radio" name="pr">1</th>
+            <th> <input type="radio" name="pr">2</th>
+            <th> <input type="radio" name="pr">3</th>
+            <th> <input type="radio" name="pr">4</th>
+        </tr>
+    </table>
+    <br>
+    <button type="submit" style="align-content: center">Submit</button>
+</body>
+</html>
