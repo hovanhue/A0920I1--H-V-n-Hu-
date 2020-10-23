@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+</head>
+<style>
+    td{
+        font-size: 20px;
+        text-align: center;
+    }
+    button{
+        font-size: 10px;
+        size: 20px;
+        width: 50px;
+    }
+</style>
+<body>
+    <table border>
+        <tr>
+            <th colspan="7"><input id="num" value="0" style="width: 380px"></th>
+        </tr>
+        <tr>
+            <td><button>Rad</button></td>
+            <td></td>
+            <td><button>x!</button></td>
+            <td><button onclick="inputNumber('(')">(</button></td>
+            <td><button onclick="inputNumber(')')">)</button></td>
+            <td><button onclick="inputNumber('/')">%</button></td>
+            <td><button onclick="clearNumber()">AC</button></td>
+        </tr>
+        <tr>
+            <td><button>Inv</button></td>
+            <td><button>sin</button></td>
+            <td><button>ln</button></td>
+            <td><button onclick="inputNumber(7)">7</button></td>
+            <td><button onclick="inputNumber(8)">8</button></td>
+            <td><button onclick="inputNumber(9)">9</button></td>
+            <td><button>/</button></td>
+        </tr>
+        <tr>
+            <td><button>pi</button></td>
+            <td><button>cos</button></td>
+            <td><button>log</button></td>
+            <td><button onclick="inputNumber(4)">4</button></td>
+            <td><button onclick="inputNumber(5)">5</button></td>
+            <td><button onclick="inputNumber(6)">6</button></td>
+            <td><button onclick="inputNumber('*')">x</button></td>
+        </tr>
+        <tr>
+            <td><button>e</button></td>
+            <td><button>tan</button></td>
+            <td><button>căn</button></td>
+            <td><button onclick="inputNumber(1)">1</button></td>
+            <td><button onclick="inputNumber(2)">2</button></td>
+            <td><button onclick="inputNumber(3)">3</button></td>
+            <td><button onclick="inputNumber('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button>Ans</button></td>
+            <td><button>EXP</button></td>
+            <td><button >mũ</button></td>
+            <td><button onclick="inputNumber(0)">0</button></td>
+            <td><button onclick="inputNumber('.')">.</button></td>
+            <td><button onclick="calculator()">=</button></td>
+            <td><button onclick="inputNumber('+')">+</button></td>
+        </tr>
+    </table>
+    <script>
+        let temp =false;
+        function clearNumber() {
+            document.getElementById("num").value ="";
+        }
+        function inputNumber(number) {
+            if(temp) {
+                if (number == "+" || number == "-" || number == "*" || number == "/") {
+                    document.getElementById("num").value += number
+                } else {
+                    document.getElementById("num").value = number;
+                }
+            } else {
+                document.getElementById("num").value += number
+            }
+            temp =false;
+        }
+        function calculator() {
+            document.getElementById("num").value=(eval(document.getElementById("num").value))
+            temp =true;
+        }
+    </script>
+</body>
+</html>

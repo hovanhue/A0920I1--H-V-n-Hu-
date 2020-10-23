@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good-fast-cheap</title>
+    <style>
+        input{
+            width:20px;
+            height:20px;
+        }
+        label{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<input type="checkbox" id="good" onclick="changed(good)">
+<label for="good">Good</label><br>
+<input type="checkbox" id="fast" onclick="changed(fast)">
+<label for="fast">Fast</label><br>
+<input type="checkbox" id="cheap" onclick="changed(cheap)">
+<label for="cheap">Cheap</label>
+<script>
+    // gán vào phần tử có id tương ứng
+    let good = document.getElementById('good');
+    let fast = document.getElementById('fast');
+    let cheap = document.getElementById('cheap');
+    // hàm changed() nhận vào tham số ele được gọi khi click vào 3 checkBox
+    function changed(ele) {
+        // biến isGood sẽ trả về true nếu ta kích vào checkBox-good (hiển thị dấu tích), tương tự với isFast và isCheap
+        let isGood = good.checked;
+        let isFast = fast.checked;
+        let isCheap = cheap.checked;
+        // nếu isGood,isFast,isCheap cùng trả về True thì set fast.checked = false (ẩn dấu tích ở checkBox-fast), tương tự
+        if (isGood && isFast && isCheap && ele == cheap) {
+            fast.checked = false;
+        }
+        if (isGood && isCheap && isFast && ele == fast) {
+            good.checked = false;
+        }
+        if (isGood && isCheap && isFast && ele == good) {
+            cheap.checked = false;
+        }
+        console.log(ele);
+    }
+</script>
+</body>
+</html>

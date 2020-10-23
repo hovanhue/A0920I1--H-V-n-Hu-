@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <label>Nhập cân nặng</label>
+        <input type="text" id="width">
+    </div>
+    <div>
+        <label>Nhập chiều cao</label>
+        <input type="text" id="height">
+    </div>
+    <input type="button" value="Convert" id="convert" onclick="chuyendoi()">
+    <script>
+        function chuyendoi() {
+            let width1 = parseFloat(document.getElementById("width").value);
+            let height = parseFloat(document.getElementById("height").value);
+            let bmi = width1 / (height ^ 2);
+            if (bmi < 18) {
+                document.getElementById("width").value = "Underweight";
+                width.style.background = "red";
+            } else if (bmi < 25.0) {
+                document.getElementById("width").value = "Normal";
+                width.style.background = "red";
+            } else if (bmi < 30.0) {
+                document.getElementById("width").value = "Overweight";
+                width.style.background = "red";
+            } else {
+                document.getElementById("width").value = "Obese";
+                width.style.background = "red";
+            }
+        }
+    </script>
+</body>
+</html>

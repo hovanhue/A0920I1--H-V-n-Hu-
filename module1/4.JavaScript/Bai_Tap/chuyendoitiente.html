@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+    <form method="get">
+        <span>Amount</span>
+        <input type="text" id="money"><br>
+        <span>From Currency</span>
+        <select>
+            <option value="">USĐ</option>
+            <option>VNĐ</option>
+        </select>
+        <span>To Currency</span>
+        <select>
+            <option value="">VNĐ</option>
+            <option>USĐ</option>
+        </select>
+        <br>
+        <button onclick="click()" id="doi">Convert</button>
+        <p id="ketqua"></p>
+    </form>
+    <script>
+        function click() {
+            let tien=parseFloat(document.getElementById("money")).value;
+            let ketqua=tien*23000;
+            document.getElementById("ketqua").value=ketqua;
+        }
+    </script>
+</body>
+</html>

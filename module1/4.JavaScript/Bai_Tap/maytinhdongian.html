@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="number1">
+    <input type="text" id="number2">
+    <input type="button" onclick="calculator('+')" value="Add(+)">
+    <input type="button" onclick="calculator('-')" value="Sub (-)">
+    <input type="button" onclick="calculator('*')" value="Mult (*)">
+    <input type="button" onclick="calculator('/')" value="Div (/)">
+    <br>
+    <input id="result1">
+    <script>
+    //ĐỪng bao giờ .value cho biến toàn cục.
+        let number1 = document.getElementById("number1");
+        let number2 = document.getElementById("number2");
+        function calculator(number) {
+            if(number=="+"){
+                let result=parseFloat(number1.value)+parseFloat(number2.value);
+                document.getElementById("result1").value=result;
+                result1.style.background="red";
+            }else if(number=="-"){
+                let result=number1.value-number2.value;
+                document.getElementById("result1").value=result;
+                result1.style.background="red";
+            }else if(number=="*"){
+                let result=number1.value*number2.value;
+                document.getElementById("result1").value=result;
+                result1.style.background="red";
+            }else if(number=="/"){
+                if(parseInt(number2.value)===0)
+                    alert("số bị chia không thể chia cho 0");
+                else {
+                    let result = number1.value / number2.value;
+                    document.getElementById("result1").value = result;
+                    result1.style.background = "red";
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

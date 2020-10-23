@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <script>
+        function minArray(arr) {
+            let min= arr[0];
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]<min)
+                    min=arr[i];
+            }
+            return min;
+        }
+
+        function maxArray(arr) {
+            let max= arr[0];
+            for(let i=0;i<arr.length;i++){
+                if(arr[i]>max)
+                    max=arr[i];
+            }
+            return max;
+        }
+
+        let arr1 = [3, 5, 1, 8, -3, 7, 8];
+        let min = minArray(arr1);
+        let max = minArray(arr1);
+        alert("Số nhỏ nhất: " +min);
+        alert("Số lớn nhất: "+max);
+    </script>
+</body>
+</html>
