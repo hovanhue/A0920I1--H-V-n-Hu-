@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let nameProduct = ["Sony", "Nokia", "SamSung"];
+    function displayProduct() {
+        document.body.innerHTML = ""
+        let temp = "<input type='text' id='product'> <button onclick='addProduct()'>Add</button>";
+        temp += "<table>"
+        for (let i = 0; i < nameProduct.length; i++) {
+            temp += "<tr>"
+            temp += "<td>" + nameProduct[i] + "</td>";
+            temp += "<td><button onclick='editProduct(" + i + ")'>Edit</button></td>";
+            temp += "<td><button onclick='deleteProduct(" + i + ")'>Delete</button></td>";
+            temp += "<tr>"
+        }
+        temp += "</table>"
+        document.write(temp)
+    }
+    function addProduct() {
+            let product = document.getElementById("product").value;
+            nameProduct.push(product);
+        console.log(nameProduct)
+        displayProduct();
+    }
+    function deleteProduct(index) {
+        if (confirm("bạn có muốn xóa sản phẩm " + nameProduct[index] + " này không?")) {
+            nameProduct.splice(index, 1);
+            displayProduct();
+        }
+    }
+    function editProduct(index) {
+        // edit bằng thông báo prompt
+        let name = prompt("Nhap tên san pham khac", nameProduct[index]);
+        nameProduct[index] = name;
+        displayProduct();
+        /*edit bằng input
+        // let temp = "<input type='text' id='product_edit'>"
+        // temp+="<button onclick='updateProduct("+index+")'>Edit</button>"
+        // document.write(temp);
+        // document.getElementById("product_edit").value = nameProduct[index];
+       // displayProduct();
+       }
+    // function updateProduct(index) {
+    //        nameProduct[index] = document.getElementById("product_edit").value;
+    //        displayProduct();
+    }*/
+    }
+    displayProduct();
+</script>
+</body>
+</html>
