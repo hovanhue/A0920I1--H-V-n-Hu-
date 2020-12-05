@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+    <script>
+        function isPalindrome(s) {
+            let first = 0;
+            let last = s.length;
+
+            if (s[first] === s[last]) {
+                return true
+            }
+            else {
+                first++;
+                last--;
+            }
+            if(first>=last)
+                return true;
+        }
+
+        let a="abba";
+        alert(isPalindrome(a));
+    </script>
 </body>
 </html>

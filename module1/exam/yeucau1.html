@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    let a=[];
+    let b=[];
+    let nhap = prompt("nhập số phần tử: ");
+    for(let i=0;i<parseInt(nhap);i++){
+        a[i] = prompt("nhập số thứ "+(i+1));
+        document.writeln(a[i])
+    }
+    for(let i=0;i<a.length;i++){
+        if(isPrime(a[i])){
+            b.push(a[i]);
+        }
+
+    }
+    document.writeln(b[i]);
+
+    function isPrime(number) {
+        if(number<2)
+            return false;
+        for(let i=2;i<=Math.sqrt(number);i++){
+            if(number % i === 0)
+                return false;
+        }
+        return true;
+    }
+
+</script>
+</body>
+</html>

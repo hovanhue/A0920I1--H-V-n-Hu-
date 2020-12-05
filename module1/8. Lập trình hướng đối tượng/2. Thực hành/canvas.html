@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+<canvas id="myCanvans" width="500px" height="300px" style="border: 1px solid darkkhaki"></canvas>
+    <script>
+        function Circle(x, y, radius){
+            this.x = x;
+            this.y = y;
+            this.radius = radius;
+        }
+        function createCircle(){
+            let canvas = document.getElementById("myCanvans");
+            let ctx = canvas.getContext("2d");
+            let radius = Math.floor(Math.random() * 100);
+            let circle= new Circle(40, 100, radius);
+            ctx.beginPath();
+            ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
+            ctx.arc(30 , 40 , 30,0,2*Math.PI);
+            // ctx.stroke();
+            ctx.fill();
+        }
+
+        createCircle();
+    </script>
 </body>
 </html>

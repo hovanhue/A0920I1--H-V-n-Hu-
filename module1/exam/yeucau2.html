@@ -2,9 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+
+
+<script>
+    class phanSo{
+        constructor(tuSo, mauSo) {
+            this.tuSo = tuSo;
+            this.mauSo = mauSo;
+        }
+        setTuSo(tuMoi){
+            this.tuSo = tuMoi;
+        }
+        setMauSo(mauMoi){
+            this.mauSo = mauMoi;
+        }
+        getTuSo(){
+            return this.tuSo;
+        }
+        getMauSo(){
+            return this.mauSo;
+        }
+        toiGian(){
+            return this.tuSo/this.mauSo;
+        }
+    }
+    let kiemTra = false;
+    let a = new phanSo(1, 2);
+    let b1 = new phanSo(2, 4);
+    let b2 = new phanSo(1, 2);
+    let b3 = new phanSo(2, 3);
+
+    if(a.toiGian() === b1.toiGian()) {
+        kiemTra=true;
+    }
+    else {
+        kiemTra=false;
+    }
+    alert(kiemTra);
+    if(a.toiGian() === b2.toiGian()) {
+        kiemTra=true;
+    }
+    else {
+        kiemTra=false;
+    }
+    alert(kiemTra);
+    if(a.toiGian() === b3.toiGian()) {
+        kiemTra=true;
+    }
+    else {
+        kiemTra=false;
+    }
+    alert(kiemTra);
+</script>
 </body>
 </html>

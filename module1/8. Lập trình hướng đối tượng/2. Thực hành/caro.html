@@ -2,9 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        class Caro {
+            constructor() {
+                this.arrCaro = new Array(20);
+                this.checkPerson1 = true;
+            }
+            init() {
+                for(let i = 0 ; i< this.arrCaro.length;i++) {
+                    this.arrCaro[i] = new Array(20);
+                    for(let j =0; j<this.arrCaro[i].length;j++) {
+                        this.arrCaro[i][j]=" ";
+                    }
+                }
+            }
+            displayCaro() {
+                document.body.innerHTML="";
+                let result ="<table border='1'>"
+                for(let i = 0 ; i< this.arrCaro.length;i++) {
+                    result += "<tr>"
+                    for(let j =0; j<this.arrCaro[i].length;j++) {
+                        result += "<td width='40px' height='40px' onclick='change("+i+","+j+")'>"+this.arrCaro[i][j]+"</td>";
+                    }
+                    result+="</tr>"
+                }
+                result += "</table>";
+                document.write(result);
+            }
+            changeCaro(x,y) {
+                if(this.arrCaro[x][y] =="X"||this.arrCaro[x][y] =="O") {
+                    alert("Ô này đã có người chơi!")
+                } else {
+                    if (this.checkPerson1) {
+                        this.arrCaro[x][y] = "X";
+                        this.checkWin("X");
+                    } else {
+                        this.arrCaro[x][y] = "O";
+                        this.checkWin("O");
+                    }
+                    this.checkPerson1 = !this.checkPerson1;
+                    this.displayCaro();
+                }
+            }
+            checkWin(temp) {
+                for(let i=0;i<this.arrCaro.length;i++){
+                    for(let j=0;i<5;j++){
+                        if(this.arrCaro[i][j] === temp && this.arrCaro[i + 1][j + 1] === temp && this.arrCaro[i + 2][j + 2] === temp && this.arrCaro[i + 3][j + 3] === temp && this.arrCaro[i + 4][j + 4] === temp){
+                            alert(temp+" Thắng");
+                            this.init();
+                            this.displayCaro();
+                        }
+                    }
+                }
+                for(let i=0;i<5;i++){
+                    for(let j=0;i<this.arrCaro.length;j++){
+                        if(this.arrCaro[i][j] === temp && this.arrCaro[i + 1][j + 1] === temp && this.arrCaro[i + 2][j + 2] === temp && this.arrCaro[i + 3][j + 3] === temp && this.arrCaro[i + 4][j + 4] === temp){
+                            alert(temp+" Thắng");
+                            this.init();
+                            this.displayCaro();
+                        }
+                    }
+                    for(let j=0;j<5;j++){
+                        if(this.arrCaro[i][j] === temp && this.arrCaro[i + 1][j + 1] === temp && this.arrCaro[i + 2][j + 2] === temp && this.arrCaro[i + 3][j + 3] === temp && this.arrCaro[i + 4][j + 4] === temp){
+                            alert(temp+" Thắng");
+                            this.init();
+                            this.displayCaro();
+                        }
+                    }
+
+                }
+            }
+        }
+        let caro = new Caro();
+        caro.init();
+        caro.displayCaro();
+        function change(x,y) {
+            caro.changeCaro(x,y);
+        }
+    </script>
 </body>
 </html>

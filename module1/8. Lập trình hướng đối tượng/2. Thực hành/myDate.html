@@ -2,9 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        class myDate{
+            constructor(day, month, year) {
+                this.day=day;
+                this.month=month;
+                this.year=year;
+            }
+            getDay = function() {
+                return this.day;
+            };
+            getMonth = function() {
+                return this.month;
+            };
+            getYear = function() {
+                return this.year;
+            };
+
+            setDay = function(day) {
+                this.day  = day;
+            };
+            setMonth = function(month) {
+                this.month  = month;
+            };
+            setYear = function(year) {
+                this.year  = year;
+            };
+
+            toString(){
+                return this.getDay()+"/"+this.getMonth()+"/"+this.getYear();
+            }
+        }
+
+        let date = new myDate(2, 4, 2007);
+        // alert(date.getDay());
+        // alert(date.getMonth());
+        // alert(date.getYear());
+        alert(date.toString());
+        date.setDay(31);
+        date.setMonth(3);
+        date.setYear(2001);
+        // alert(date.getDay());
+        // alert(date.getMonth());
+        // alert(date.getYear());
+        alert(date.toString());
+
+    </script>
 </body>
 </html>

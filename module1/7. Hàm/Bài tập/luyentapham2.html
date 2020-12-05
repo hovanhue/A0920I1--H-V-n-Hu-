@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+    <script>
+        // let number=prompt("Nhập số:");
+        // function square(number) {
+        //     return number*number;
+        // }
+        // alert(square(number))
+
+        class Rectangle{
+            constructor(width, height) {
+                this.width =width;
+                this.height=height;
+            }
+            Area(){
+                return (this.width*this.height);
+            }
+            perimeter(){
+                return (this.width+this.height)*2;
+            }
+        }
+        let rectangle = new Rectangle(2,4);
+        alert("Diện tích: "+rectangle.Area());
+        alert("Chu vi: "+rectangle.perimeter());
+
+        // function giaiThua(n) {
+        //     if (n === 1)
+        //         return 1;
+        //     return n * giaiThua(n - 1);
+        // }
+        // alert(giaiThua(3))
+
+
+    </script>
 </body>
 </html>
