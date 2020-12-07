@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d94658b6-378e-4875-a0b7-c0a0d5c3c0b4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/image.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/image2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/pikachu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module1/exam/yeucau1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/module2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/src/thuchanh/checkLeapYear.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/src/thuchanh/countDay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/src/thuchanh/ptbac1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeGym-C0920G1_Hồ_Văn_Huệ_tuan 2_module1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module1/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/2/hii.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/2/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/2/test.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/6. mảng/1. Bài Tập/luyentapmang.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/6. mảng/1. Bài Tập/luyentapmang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/6. mảng/2. Thực Hành/chuyendoinhietdo.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/6. mảng/2. Thực Hành/chuyendoinhietdo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/12.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/12.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/isPrime.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/isPrime.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/ktradoixung.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/ktradoixung.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/luyentapham2.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/luyentapham2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/1. bài tập/Circle.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/1. bài tập/Circle.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/1. bài tập/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/1. bài tập/demo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/FlashLamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/FlashLamp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/canvas.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/canvas.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/caro.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/caro.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/myDate.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/myDate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/pikachu.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/pikachu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/caseStudy/caseTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/caseStudy/caseTest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/caseStudy/js2.js" beforeDir="false" afterPath="$PROJECT_DIR$/module1/caseStudy/js2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/caseStudy/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/module1/caseStudy/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/caseStudy/task1.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/caseStudy/task1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/caseStudy/task2.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/caseStudy/task2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/exam/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/module1/exam/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/exam/thucthanh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/exam/yeucau2.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/exam/yeucau2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module1/exam/yeucau3.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/exam/yeucau3.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lBzP3kqiKuHScuNUf1MVXZDjQT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/module2" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d94658b6-378e-4875-a0b7-c0a0d5c3c0b4" name="Default Changelist" comment="" />
+      <created>1607085246706</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607085246706</updated>
+      <workItem from="1607085255883" duration="28000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1607085281573">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="117" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1607085281573" />
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog" timestamp="1607085256419">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="186" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1607085256419" />
+  </component>
+</project>
