@@ -1,6 +1,6 @@
 package Ls3_Array_Method.thuchanh;
 
-public class findItems {
+public class FindItems {
 
     public static void main(String[] args) {
         System.out.println("The application searches for values in an array");

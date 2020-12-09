@@ -1,7 +1,5 @@
 package Ls2_Loop.baitap;
-
 import java.util.Scanner;
-
 public class displayPrime {
 
     public static boolean checkNguyenTo(int n) {
@@ -17,7 +15,7 @@ public class displayPrime {
     }
 
     public static void displayNguyenTo(int n) {
-        for (int i = 1; i < n; i++) {
+        for (int i = 2; i < n; i++) {
             if (checkNguyenTo(i)) {
                 System.out.print(" " + i);
             }

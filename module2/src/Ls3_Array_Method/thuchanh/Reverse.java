@@ -2,7 +2,7 @@ package Ls3_Array_Method.thuchanh;
 
 import java.util.Scanner;
 
-public class reverse {
+public class Reverse {
 
     public static void daoNguoc(int a[]) {
         for (int i = 0; i < a.length / 2; i++) {
