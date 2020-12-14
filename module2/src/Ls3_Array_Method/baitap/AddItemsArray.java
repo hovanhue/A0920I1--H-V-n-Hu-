@@ -28,14 +28,13 @@ public class AddItemsArray {
             }
             a = b;
         }
-        //chen 1 phan tu element vao cuoi
+//        chen 1 phan tu element vao cuoi
         a[n] = element;
         n++;
     }
 
-
     public void addIndex(int index, int e) {
-        if (index < 0 || index > n) {
+        if (index < 0 || index > a.length) {
             System.out.println(" invalid index! ");
         } else {
             if (n == a.length) add(e);
@@ -46,6 +45,7 @@ public class AddItemsArray {
             n++;
         }
     }
+
 
     public void display() {
         for (int i = 0; i < a.length; i++) {
@@ -59,7 +59,14 @@ public class AddItemsArray {
         a.add(2);
         a.add(3);
         a.add(4);
-        a.remove(1);
+        System.out.println("Trước khi chèn:");
+        a.display();
+        System.out.println("\nSau khi chèn:");
+        a.addIndex(2,6);
+
+        a.display();
+        a.remove(3);
+        System.out.println("\nSau khi xóa");
         a.display();
     }
 }
