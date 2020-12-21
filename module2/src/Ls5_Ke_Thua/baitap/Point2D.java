@@ -20,29 +20,34 @@ public class Point2D {
         this.y = y;
     }
 
-    public Point2D(){
-        this.x =0.0f;
-        this.y =0.0f;
+    public Point2D() {
+        this.x = 0.0f;
+        this.y = 0.0f;
     }
 
-    public void setXY(float x, float y){
+    public void setXY(float x, float y) {
         this.x = x;
         this.y = y;
     }
-    public float[] getXY(){
-        float []a={getX(),getY()};
+
+    public float[] getXY() {
+        float[] a = {getX(), getY()};
         return a;
     }
+
     public Point2D(float x, float y) {
         this.x = x;
         this.y = y;
     }
-
-    public String toString(){
-        return getXY()+"";
+@Override
+    public String toString() {
+        return getX() + " "+getY()+"";
     }
 
     public static void main(String[] args) {
-
+        Point2D point2D = new Point2D();
+        point2D.setX(2);
+        point2D.setY(3);
+        System.out.println(point2D.toString());
     }
 }

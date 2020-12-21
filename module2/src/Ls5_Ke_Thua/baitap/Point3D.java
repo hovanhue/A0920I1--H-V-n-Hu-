@@ -25,6 +25,6 @@ public class Point3D extends Point2D {
     }
 
     public static void main(String[] args) {
-        
+
     }
 }

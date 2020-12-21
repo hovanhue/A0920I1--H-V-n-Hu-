@@ -1,8 +1,7 @@
-package Ls5_Ke_Thua.thuchanh;
+package Ls6_Abstract_interface.baitap;
 
-public class Circle extends Shape {
+public class Circle extends Shape implements Resizeable{
     private double radius;
-
     public double getRadius() {
         return radius;
     }
@@ -48,5 +47,10 @@ public class Circle extends Shape {
 //        System.out.println(circle.toString());
         Circle circle2 = new Circle("Yellow", true, 6);
         System.out.println(circle2.toString());
+    }
+
+    @Override
+    public void resize(double percent) {
+        this.radius += this.radius*(percent/100);
     }
 }
