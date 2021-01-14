@@ -2,46 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d94658b6-378e-4875-a0b7-c0a0d5c3c0b4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/image2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/pikachu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module1/exam/yeucau1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module2/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module2/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module2/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module2/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module2/module2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module2/src/thuchanh/checkLeapYear.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module2/src/thuchanh/countDay.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module2/src/thuchanh/ptbac1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodeGym-C0920G1_Hồ_Văn_Huệ_tuan 2_module1.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module1/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/2/hii.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/2/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/2/test.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/6. mảng/1. Bài Tập/luyentapmang.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/6. mảng/1. Bài Tập/luyentapmang.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/6. mảng/2. Thực Hành/chuyendoinhietdo.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/6. mảng/2. Thực Hành/chuyendoinhietdo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/12.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/isPrime.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/isPrime.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/ktradoixung.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/ktradoixung.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/luyentapham2.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/7. Hàm/Bài tập/luyentapham2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/1. bài tập/Circle.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/1. bài tập/Circle.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/1. bài tập/demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/1. bài tập/demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/FlashLamp.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/FlashLamp.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/canvas.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/canvas.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/caro.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/caro.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/myDate.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/myDate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/pikachu.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/8. Lập trình hướng đối tượng/2. Thực hành/pikachu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/caseStudy/caseTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/caseStudy/caseTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/caseStudy/js2.js" beforeDir="false" afterPath="$PROJECT_DIR$/module1/caseStudy/js2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/caseStudy/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/module1/caseStudy/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/caseStudy/task1.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/caseStudy/task1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/caseStudy/task2.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/caseStudy/task2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/exam/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/module1/exam/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/exam/thucthanh.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/exam/yeucau2.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/exam/yeucau2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module1/exam/yeucau3.html" beforeDir="false" afterPath="$PROJECT_DIR$/module1/exam/yeucau3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/src/Ls7_DSA_List/thuchanh/MyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/src/Ls7_DSA_List/thuchanh/MyList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/src/Ls7_DSA_List/thuchanh/MyListTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module2/src/Ls7_DSA_List/thuchanh/TestMyLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/Ls6_Abstract_interface/baitap/TestResize.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/Ls6_Abstract_interface/baitap/TestResize.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/case_study_module2/Controllers/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/case_study_module2/Controllers/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/case_study_module2/model/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/case_study_module2/model/House.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/case_study_module2/model/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/case_study_module2/model/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/out/production/module2/case_study_module2/model/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/module2/out/production/module2/case_study_module2/model/Services.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/case_study_module2/controllers/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/case_study_module2/controllers/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/case_study_module2/model/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/case_study_module2/model/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/case_study_module2/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/case_study_module2/model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/case_study_module2/model/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/case_study_module2/model/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/case_study_module2/model/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/module2/src/case_study_module2/model/Villa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module2/src/stack/InfixToPostfix.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +30,6 @@
   <component name="ProjectId" id="1lBzP3kqiKuHScuNUf1MVXZDjQT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -74,13 +49,23 @@
       <option name="presentableId" value="Default" />
       <updated>1607085246706</updated>
       <workItem from="1607085255883" duration="28000" />
+      <workItem from="1609256411865" duration="648000" />
+      <workItem from="1609758143158" duration="1370000" />
+      <workItem from="1609760158474" duration="217000" />
+      <workItem from="1609760475518" duration="150000" />
+      <workItem from="1609761880650" duration="28000" />
+      <workItem from="1609761968912" duration="67000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="137" y="17" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1609256456862">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="17" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1609256456862" />
     <state x="463" y="117" key="FileChooserDialogImpl" timestamp="1607085281573">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
