@@ -24,11 +24,7 @@ public class MainController {
             System.out.println("3.Add New Room");
             System.out.println("4.Back to menu");
             System.out.println("5.Exit");
-//            try {
             choose = scanner.nextInt();
-//            } catch (Exception e) {
-//                System.out.println(choose + " không hợp lệ");
-//            }
 
             //D:\A0920I- HoVanHue\module2
 
@@ -38,6 +34,7 @@ public class MainController {
                         Villa villa = new Villa();
 
                         villa.input();
+
                         bw.write("" + villa.showInfo());
                         bw.close();
 
@@ -121,18 +118,7 @@ public class MainController {
         }
 
     }
-
-    /*
-    1.	Show all Villa
-2.	Show all House
-3.	Show all Room
-4.	Show All Name Villa Not Duplicate
-5.	Show All Name House Not Duplicate
-6.	Show All Name Name Not Duplicate
-7.	Back to menu
-8.	Exit
-
-     */
+    
     public static void showServices() {
         choose = 0;
         do {
