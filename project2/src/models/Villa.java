@@ -1,5 +1,9 @@
 package models;
 
+import controllers.fileUtill.ReadFile;
+
+import static controllers.menu_main.MainConTroller.COMMA;
+
 public class Villa extends Services{
     private String standardService;
     private String otherService;
@@ -49,9 +53,6 @@ public class Villa extends Services{
         this.floor = floor;
     }
 
-    public Villa() {
-
-    }
     @Override
     public String showInfor(){
         String s ="";
@@ -61,6 +62,19 @@ public class Villa extends Services{
         +this.getStandardService() +" \nMô tả tiện nghi khác: "+this.getOtherService()
         +" \nDiện tích hồ bơi: "+this.getAreaPool()+" \nSố tầng: "+this.getFloor();
         return s;
+    }
+
+    public String addFileCsv(){
+        return getId() + COMMA +
+                getNameService() + COMMA +
+                getAreaUsed() + COMMA +
+                getCost() + COMMA +
+                getNumberMaxPerson() + COMMA +
+                getTypeService() + COMMA +
+                getStandardService() + COMMA +
+                getOtherService()+ COMMA +
+                getAreaPool() + COMMA +
+                getFloor() ;
     }
 }
 

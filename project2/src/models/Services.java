@@ -1,6 +1,6 @@
 package models;
 
-public abstract class Services {
+public abstract class Services implements Comparable<Services> {
     private String id;
     private String nameService;
     private double areaUsed;
@@ -9,7 +9,6 @@ public abstract class Services {
     private String typeService;
 
     public abstract String showInfor();
-
 
     public Services(String id, String nameService, double areaUsed, double cost, int numberMaxPerson, String typeService) {
         this.id = id;
@@ -71,4 +70,8 @@ public abstract class Services {
         this.typeService = typeService;
     }
 
+    @Override
+    public int compareTo(Services services) {
+        return this.nameService.compareTo(services.getNameService());
+    }
 }

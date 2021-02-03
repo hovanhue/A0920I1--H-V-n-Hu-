@@ -1,5 +1,7 @@
 package models;
 
+import static controllers.menu_main.MainConTroller.COMMA;
+
 public class House extends Services{
     private String standardService;
     private String otherService;
@@ -50,5 +52,17 @@ public class House extends Services{
                 +this.getStandardService() +" Mô tả tiện nghi khác: "+this.getOtherService()
                 +" Số tầng: "+this.getFloor();
         return s;
+    }
+
+
+    public String addFileCsv(){
+        return getId() + COMMA +
+                getNameService() + COMMA +
+                getAreaUsed() + COMMA +
+                getCost() + COMMA +
+                getNumberMaxPerson() + COMMA +
+                getTypeService() + COMMA +
+                getStandardService() + COMMA +
+                getOtherService()+ COMMA + getFloor() ;
     }
 }

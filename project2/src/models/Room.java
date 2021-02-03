@@ -1,5 +1,7 @@
 package models;
 
+import static controllers.menu_main.MainConTroller.COMMA;
+
 public class Room extends Services{
     private String freeService;
 
@@ -28,5 +30,12 @@ public class Room extends Services{
                 +" Số lượng người tối đa: "+super.getNumberMaxPerson()+" Kiểu thuê: "+ super.getTypeService()+" Tiêu chuẩn phòng: "
                +" Dịch vụ đi kèm"+this.getFreeService();
         return s;
+    }
+
+    public String addFileCsv(){
+        return getId() + COMMA + getNameService() + COMMA +
+                getAreaUsed() + COMMA + getCost() + COMMA +
+                getNumberMaxPerson() + COMMA + getTypeService() +
+                COMMA + getFreeService();
     }
 }

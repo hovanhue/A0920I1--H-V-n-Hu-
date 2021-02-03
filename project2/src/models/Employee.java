@@ -4,14 +4,14 @@ public class Employee {
     //họ tên Employee , Ngày sinh, Số CMND, Số ĐT, Email, Trình độ, Vị trí, lương
     private String name;
     private String dayOfBirth;
-    private int identity;
-    private int phoneNumber;
+    private String identity;
+    private String phoneNumber;
     private String email;
     private String level;
     private String location;
-    private double salary;
+    private String salary;
 
-    public Employee(String name, String dayOfBirth, int identity, int phoneNumber, String email, String level, String location, double salary) {
+    public Employee(String name, String dayOfBirth, String identity, String phoneNumber, String email, String level, String location, String salary) {
         this.name = name;
         this.dayOfBirth = dayOfBirth;
         this.identity = identity;
@@ -40,19 +40,19 @@ public class Employee {
         this.dayOfBirth = dayOfBirth;
     }
 
-    public int getIdentity() {
+    public String getIdentity() {
         return identity;
     }
 
-    public void setIdentity(int identity) {
+    public void setIdentity(String identity) {
         this.identity = identity;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -80,13 +80,25 @@ public class Employee {
         this.location = location;
     }
 
-    public double getSalary() {
+    public String getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(String salary) {
         this.salary = salary;
     }
 
-
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "name='" + name + '\'' +
+                ", dayOfBirth='" + dayOfBirth + '\'' +
+                ", identity=" + identity +
+                ", phoneNumber=" + phoneNumber +
+                ", email='" + email + '\'' +
+                ", level='" + level + '\'' +
+                ", location='" + location + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }
