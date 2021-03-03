@@ -101,4 +101,16 @@ public class Employee {
                 ", salary=" + salary +
                 '}';
     }
+
+    public String showInfor() {
+        return "\n" + "Full name: " + this.getName()+ "\n" +
+                "Day of birth: " + getDayOfBirth() + "\n" +
+                "Id Card: " + this.getIdentity() + "\n" +
+                "Phone Number: " + this.getPhoneNumber() + "\n" +
+                "Email: " + this.getEmail() + "\n" +
+                "Level: " + this.getLevel() + "\n" +
+                "Position: " + this.getLocation() + "\n" +
+                "Salary: " + this.getSalary() + "\n" ;
+
+    }
 }

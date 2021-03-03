@@ -1,6 +1,7 @@
 package controllers.regular_exception;
 
 import Exception.*;
+import controllers.fileUtill.ReadFile;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -141,17 +142,46 @@ public class RegularExpression {
     public static void validateEmail(String email) throws EmailException {
         pattern = Pattern.compile(EMAIL_RG);
         matcher = pattern.matcher(email);
-        if (!matcher.matches()) {
-            throw new EmailException("Email " + email + " Bạn nhập không đúng (name@abc.com)");
+        if(!matcher.matches()){
+            throw new EmailException("Email has a format name@abc.com");
         }
     }
 
     public static void validateCustomerType(String customerType) throws CustomerInformationException {
         pattern = Pattern.compile(CUSTOMER_TYPE_RG);
         matcher = pattern.matcher(customerType);
-        if (!matcher.matches()) {
-            throw new CustomerInformationException(customerType + " Không hợp lệ (member|sliver|gold|platinum|diamond|Member|Sliver|Gold|Platinum|Diamond)");
+        if(!matcher.matches()){
+            throw new CustomerInformationException("Option : member|sliver|gold|platinum|diamond|Member|Sliver|Gold|Platinum|Diamond");
         }
     }
 
+    public static void indexCustomerException(String choiceCustomer) throws IndexOutOfBoundsException, NumberFormatException {
+        if(Integer.parseInt(choiceCustomer) < 1 || Integer.parseInt(choiceCustomer) > ReadFile.customerList.size()){
+            throw  new IndexOutOfBoundsException("Choice the correct number of customer");
+        }
+    }
+
+    public static void indexVillaException(String choiceVilla) throws IndexOutOfBoundsException, NumberFormatException {
+        if (Integer.parseInt(choiceVilla) < 1 || Integer.parseInt(choiceVilla) > ReadFile.villaList.size()) {
+            throw new IndexOutOfBoundsException("Choice the correct number of villa");
+        }
+    }
+
+    public static void indexRoomException(String choiceRoom) throws IndexOutOfBoundsException, NumberFormatException {
+        if (Integer.parseInt(choiceRoom) < 1 || Integer.parseInt(choiceRoom) > ReadFile.roomList.size()) {
+            throw new IndexOutOfBoundsException("Choice the correct number of Room");
+        }
+    }
+
+    public static void indexHouseException(String choiceHouse) throws IndexOutOfBoundsException, NumberFormatException {
+        if (Integer.parseInt(choiceHouse) < 1 || Integer.parseInt(choiceHouse) > ReadFile.houseList.size()) {
+            throw new IndexOutOfBoundsException("Choice the correct number of House");
+        }
+    }
+
+    public static void indexEmployeeException(String choiceEmployee) throws IndexOutOfBoundsException, NumberFormatException {
+        if (Integer.parseInt(choiceEmployee) < 1 || Integer.parseInt(choiceEmployee) > ReadFile.employeeList.size()) {
+            throw new IndexOutOfBoundsException("Choice the correct number of Employee");
+        }
+    }
 }

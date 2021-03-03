@@ -92,6 +92,7 @@ public class ReadFile {
         }
     }
 
+
     public static void readFileCustomer() {
         customerList = new ArrayList<>();
         List<String> stringList = readFromFile(PATH_FILE_CUSTOMER);

@@ -111,11 +111,19 @@ public class Customer implements Comparable<Customer>{
         this.address = address;
     }
 
+    public Services getService() {
+        return service;
+    }
+
+    public void setService(Services service) {
+        this.service = service;
+    }
+
     public String showInfor(){
         String s = "";
         s+="\nName: "+this.getName();
         s+="\nDate of birth: "+this.getDayOfBirth();
-        s+="\nSex: "+this.getSex();
+        s+="\nGender: "+this.getSex();
         s+="\nIdentity: "+this.getIdentity();
         s+="\nNumber phone: "+this.getPhoneNumber();
         s+="\nEmail: "+this.getEmail();
@@ -148,6 +156,18 @@ public class Customer implements Comparable<Customer>{
                 this.getAddress() + COMMA +
                 this.getTypeCustomer();
     }
+
+    public String addInformationBooking(){
+        return this.getName() + COMMA +
+                this.getDayOfBirth() + COMMA +
+                this.getSex() + COMMA +
+                this.getIdentity() + COMMA +
+                this.getPhoneNumber() + COMMA +
+                this.getEmail() + COMMA +
+                this.getAddress() + COMMA +
+                this.getTypeCustomer();
+    }
+
 
     @Override
     public int compareTo(Customer customer) {

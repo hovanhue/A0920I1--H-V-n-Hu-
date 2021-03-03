@@ -1,10 +1,13 @@
 package controllers.menu_main;
 
+import controllers.employee.ShowEmployee;
+
 import java.util.*;
 
 import static controllers.booking.AddBooking.addNewBooking;
 import static controllers.customer.Add_Customer.addNewCustomer;
 import static controllers.customer.Show_Customer.showInformationCustomers;
+import static controllers.employee.ShowEmployee.showInforEmployee;
 import static controllers.service.Add_Service.addNewServices;
 import static controllers.service.Show_Service.showServices;
 
@@ -41,9 +44,10 @@ public class MainConTroller {
                     break;
                 case "5":
                     addNewBooking();
+                    displayMainMenu();
                     break;
-
                 case "6":
+                    showInforEmployee();
                     break;
                 case "7":
                     System.exit(0);
