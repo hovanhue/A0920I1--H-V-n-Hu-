@@ -1,6 +1,9 @@
+
+
 drop DATABASE IF EXISTS caseStudy_module3;
 CREATE DATABASE if not EXISTS caseStudy_module3;
 USE caseStudy_module3;
+
 CREATE table ViTri(
 	IDViTri int PRIMARY key AUTO_INCREMENT,
     TenViTri VARCHAR(45)
@@ -102,25 +105,27 @@ CREATE table HopDongChiTiet(
     FOREIGN KEY (IDHopDong) REFERENCES HopDong(IDHopDong)
 );
 
-INSERT INTO casestudy_module3.nhanvien(`HoTen`,`idvitri`,`idtrinhdo`,`idbophan`,`ngaysinh`,`socmnd`,`luong`,`sdt`,`email`,`diachi`) VALUES ('Nguyễn Văn Linh',1,1,1,'2000-01-01','123456761','30000.0','113313123','hodas@gmail.com','Đà nẵng');
-INSERT INTO casestudy_module3.nhanvien(`HoTen`,`idvitri`,`idtrinhdo`,`idbophan`,`ngaysinh`,`socmnd`,`luong`,`sdt`,`email`,`diachi`) VALUES ('Lê Hồng Phong',2,2,2,'2000-01-01','123456761','30000.0','113313123','hodas@gmail.com','Đà nẵng');
-INSERT INTO casestudy_module3.nhanvien(`HoTen`,`idvitri`,`idtrinhdo`,`idbophan`,`ngaysinh`,`socmnd`,`luong`,`sdt`,`email`,`diachi`) VALUES ('Bạch Đằng',3,3,3,'2000-01-01','123456761','30000.0','113313123','hodas@gmail.com','Đà nẵng');
+INSERT INTO `caseStudy_module3`.`BoPhan` (`IDBoPhan`, `TenBoPhan`) VALUES ('1', 'quản lí'),('2', 'nhân viên'),('3', 'giám sát'),('4', 'kế toán');
+
+INSERT INTO `caseStudy_module3`.`TrinhDo` (`IDTrinhDo`, `TrinhDo`) VALUES ('1', 'Tiến Sĩ'), ('2', 'Thạc Sĩ'), ('3', 'Cao Học'), ('4 ', 'Đại Học'), 
+('5', 'Cao Đẳng'),('6', 'Trung Cấp'), ('7', 'Trung học phổ thông');
+
+INSERT INTO `caseStudy_module3`.`ViTri` (`IDViTri`, `TenViTri`) VALUES ('1', 'Chủ tịch'),('2', 'Giám Đốc'), ('3', 'Trưởng phòng'),('4', 'Quản lí'),
+('5', 'Kế toán'),('6', 'nhân viên');
+ 
 INSERT INTO casestudy_module3.kieuthue ( `TenKieuThue`, `Gia`) VALUES ( 'Ngày', 1000000),('Tháng', 20000000);
 INSERT INTO casestudy_module3.loaidichvu(`TenLoaiDichVu`) VALUES ('Villa'),('House'),('Room');
-INSERT INTO casestudy_module3.dichvu (`TenDichVu`, `DienTich`, `SoTang`, `SoNguuoiToiDa`, `ChiPhiThue`, `IDKieuThue`, `IDLoaiDichVu`, `TrangThai`) VALUES ('Villa', '10', '2', '10', '100', '1', '1', 'đã đặt');
-INSERT INTO casestudy_module3.dichvu (`TenDichVu`, `DienTich`, `SoTang`, `SoNguuoiToiDa`, `ChiPhiThue`, `IDKieuThue`, `IDLoaiDichVu`, `TrangThai`) VALUES ('House', '10', '2', '10', '100', '2', '2', 'đã đặt');
-INSERT INTO casestudy_module3.dichvu (`TenDichVu`, `DienTich`, `SoTang`, `SoNguuoiToiDa`, `ChiPhiThue`, `IDKieuThue`, `IDLoaiDichVu`, `TrangThai`) VALUES ('Room', '10', '2', '10', '100', '1', '2', 'đã đặt');
-INSERT INTO casestudy_module3.dichvu (`TenDichVu`, `DienTich`, `SoTang`, `SoNguuoiToiDa`, `ChiPhiThue`, `IDKieuThue`, `IDLoaiDichVu`, `TrangThai`) VALUES ('Villa', '10', '2', '10', '100', '2', '1', 'đã đặt');
 
-INSERT INTO `casestudy_module3`.`hopdong` (`IDNhanVien`, `IDKhachHang`, `IDDichVu`, `NgayLapHopDong`, `NgayKetThuc`, `TienDatCoc`, `TongTien`) VALUES ('1', '2', '2', '2021-10-03', '2021-03-12', '1000', '2000');
-INSERT INTO `casestudy_module3`.`hopdong` (`IDNhanVien`, `IDKhachHang`, `IDDichVu`, `NgayLapHopDong`, `NgayKetThuc`, `TienDatCoc`, `TongTien`) VALUES ('1', '3', '3', '2021-10-03', '2021-03-12', '1000', '2000');
-INSERT INTO `casestudy_module3`.`hopdong` (`IDNhanVien`, `IDKhachHang`, `IDDichVu`, `NgayLapHopDong`, `NgayKetThuc`, `TienDatCoc`, `TongTien`) VALUES ('2', '5', '4', '2021-10-03', '2021-03-12', '1000', '2000');
-INSERT INTO `casestudy_module3`.`hopdong` (`IDNhanVien`, `IDKhachHang`, `IDDichVu`, `NgayLapHopDong`, `NgayKetThuc`, `TienDatCoc`, `TongTien`) VALUES ('3', '4', '5', '2021-10-03', '2021-03-12', '1000', '2000');
-INSERT INTO `casestudy_module3`.`hopdong` (`IDNhanVien`, `IDKhachHang`, `IDDichVu`, `NgayLapHopDong`, `NgayKetThuc`, `TienDatCoc`, `TongTien`) VALUES ('1', '2', '2', '2021-10-03', '2021-03-12', '1000', '2000');
-INSERT INTO `casestudy_module3`.`hopdong` (`IDNhanVien`, `IDKhachHang`, `IDDichVu`, `NgayLapHopDong`, `NgayKetThuc`, `TienDatCoc`, `TongTien`) VALUES ('1', '1', '2', '2021-10-03', '2021-03-12', '1000', '2000');
-INSERT INTO `casestudy_module3`.`dichvudikem` (`TenDichVuDiKem`, `Gia`, `DonVi`, `TrangThaiKhaDung`) VALUES ('karaoke', '1000', 1, 'trong');
-INSERT INTO `casestudy_module3`.`dichvudikem` (`TenDichVuDiKem`, `Gia`, `DonVi`, `TrangThaiKhaDung`) VALUES ('ăn uống', '1000', 2, 'trong');
-INSERT INTO `casestudy_module3`.`dichvudikem` (`TenDichVuDiKem`, `Gia`, `DonVi`, `TrangThaiKhaDung`) VALUES ('thue xe', '1000', 3, 'trong');
+INSERT INTO `caseStudy_module3`.`LoaiKhach` (`IDLoaiKhach`, `TenKhach`) VALUES ('1', 'Vip'),('2','Siliver'),('3', 'Gold'),('4','Member');
+
+INSERT INTO `caseStudy_module3`.`DichVuDiKem` (`IDDichVuDiKem`, `TenDichVuDiKem`, `Gia`, `DonVi`) VALUES ('1', 'Karaoke', '100000', '1'),
+('2','Car','200000','2'),('3','Ho boi','200000','3');
+
+INSERT INTO `caseStudy_module3`.`KhachHang` (`IDKhachHang`, `IDLoaiKhach`, `HoTen`, `NgaySinh`, `SoCMND`, `SDT`, `Email`) VALUES ('1', '1', 'Hue', '2001-03-31', '12321', '090554213', 'hovanhue@gmail.com'),
+('2', '2', 'Hung', '2000-03-31', '12323121', '0343554213', 'nguyenvanhung@gmail.com'),('3', '4', 'Hue', '2001-03-31', '12321', '090554213', 'hovanhue@gmail.com');
+
+INSERT INTO `caseStudy_module3`.`DichVu` (`IDDichVu`, `TenDichVu`, `DienTich`, `SoTang`, `SoNguuoiToiDa`, `ChiPhiThue`, `IDKieuThue`, `IDLoaiDichVu`,`trangthai`) VALUES('1', 'Villa', '100', '2', '10', '100000', '1', '1','Trong'),('2', 'House', '100', '1', '10', '100000', '2', '2','Trong');
+
 
 -- yêu cầu 2
 SELECT * FROM casestudy_module3.nhanvien WHERE(HoTen LIKE 'h%' OR HoTen LIKE 'k%' OR HoTen LIKE 't%') and length(HoTen) < 15;
@@ -153,5 +158,55 @@ FROM dichvu
 INNER JOIN loaidichvu on dichvu.iddichvu=loaidichvu.idloaidichvu
 WHERE not EXISTS (SELECT hopdong.idhopdong from hopdong where (hopdong.ngaylaphopdong BETWEEN "2019-01-01" and "2019-03-31") and hopdong.iddichvu = dichvu.iddichvu);
 
+-- yeu cau 7
+-- Hiển thị thông tin IDDichVu, TenDichVu, DienTich, SoNguoiToiDa, ChiPhiThue, TenLoaiDichVu của tất cả các 
+-- loại dịch vụ đã từng được Khách hàng đặt phòng trong năm 2018 nhưng chưa từng được Khách hàng đặt phòng  trong năm 2019.
 
+select dichvu.iddichvu, dichvu.tendichvu, dichvu.dientich, dichvu.songuoitoida, dichvu.chiphithue, loaidichvu.tenloaidichvu
+from dichvu 
+inner join loaidichvu on dichvu.iddichvu=loaidichvu.idloaidichvu 
+where exists (select hopdong.idhopdong from hopdong where(hopdong.ngaylaphopdong) = "2018" and hopdong.iddichvu = dichvu.iddichvu)
+and not exists (select hopdong.idhopdong from hopdong where(hopdong.ngaylaphopdong) = "201" and hopdong.iddichvu = dichvu.iddichvu);
 
+-- 8.	Hiển thị thông tin HoTenKhachHang có trong hệ thống, với yêu cầu HoThenKhachHang không trùng nhau.
+-- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên
+select distinct khachhang.hoten from khachhang;
+select khachhang.hoten from khachhang group by khachhang.hoten;
+select khachhang.hoten from khachhang  union select khachhang.hoten from khachhang ;
+
+-- 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2019 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
+select temp.month, count(month(hopdong.ngaylaphopdong)) as so_khach_hang_dang_ki, sum(hopdong.tongtien) as tong_tien
+from(
+	select 1 as month
+	union select 2 as month
+	union select 3 as month
+	union select 4 as month
+	union select 5 as month
+	union select 6 as month
+	union select 7 as month
+	union select 8 as month
+	union select 9 as month
+	union select 10 as month
+	union select 11 as month
+	union select 12 as month) as temp
+left join hopdong on month(hopdong.ngaylaphopdong) = temp.month
+left join khachhang on khachhang.idkhachhang = hopdong.idkhachhang
+where year(hopdong.ngaylaphopdong) ='2019' or year (hopdong.ngaylaphopdong) is null or year (hopdong.ngaylaphopdong)
+group by temp.month
+
+-- yeu cau 10
+-- 10.	Hiển thị thông tin tương ứng với từng Hợp đồng thì đã sử dụng bao nhiêu Dịch vụ đi kèm. 
+-- Kết quả hiển thị bao gồm IDHopDong, NgayLamHopDong, NgayKetthuc, TienDatCoc, SoLuongDichVuDiKem (được tính dựa trên việc count các IDHopDongChiTiet).
+select hopdong.idhopdong, hopdong.ngaylaphopdong, hopdong.ngayketthuc, hopdong.tiendatcoc, count(hopdongchitiet.iddichvudikem) as So_luong_dich_vu_di_kem
+from hopdong
+inner join hopdongchitiet on hopdong.idhopdong = hopdongchitiet.idhopdong
+group by hopdong.idhopdong;
+
+-- yeu cau 11
+-- 11.	Hiển thị thông tin các Dịch vụ đi kèm đã được sử dụng bởi những Khách hà	ng có TenLoaiKhachHang là “Diamond” và có địa chỉ là “Vinh” hoặc “Quảng Ngãi”.
+select distinct dichvudikem.tendichvudikem, dichvudikem.gia, dichvudikem.donvi from hopdong
+inner join hopdongchitiet on hopdong.idhopdong = hopdongchitiet.idhopdong
+inner join dichvudikem on hopdongchitiet.iddichvudikem = dichvudikem.iddichvudikem
+inner join khachhang on khachhang.idkhachhang = hopdong.idkhachhang
+inner join loaikhach on loaikhach.idloaikhach = khachhang.idloaikhach
+where loaikhach.tenkhach="Diamond" and khachhang.diachi in ("Vinh","Quang Ngai");

@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="thuchanh_Users:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/thuchanh_Users_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="thuchanh_Users" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="taglibs-standard-impl-1.2.5" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/apache-tomcat-9.0.12/webapps/examples/WEB-INF/lib/taglibs-standard-spec-1.2.5.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="thuchanh_Users/web/Web" />
+    </root>
+  </artifact>
+</component>
