@@ -1,4 +1,4 @@
-package controller;
+package controller.Employee;
 
 import dao.EmployeeImpl;
 import dao.serviceImp.EmployeeDAO;

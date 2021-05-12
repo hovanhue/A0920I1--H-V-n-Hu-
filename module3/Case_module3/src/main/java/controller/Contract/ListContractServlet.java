@@ -1,4 +1,4 @@
-package controller;
+package controller.Contract;
 
 import dao.ContractImpl;
 import dao.serviceImp.ContractDAO;

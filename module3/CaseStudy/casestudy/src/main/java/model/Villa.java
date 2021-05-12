@@ -1,4 +1,4 @@
-package model.service;
+package model;
 
 public class Villa extends Service {
     // Tiêu chuẩn phòng (standard_room), Mô tả tiện nghi khác (description_other_convenience),

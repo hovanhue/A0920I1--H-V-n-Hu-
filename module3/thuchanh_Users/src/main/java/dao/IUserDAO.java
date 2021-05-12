@@ -12,6 +12,8 @@ public interface IUserDAO {
     public boolean deleteUser(int id);
     public boolean updateUser(User user);
     public User getUserById(int id);
+    public void findByCountry();
+    public void sortByName();
 
     public void insertUserStore(User user) throws SQLException;
     public void addUserTransaction(User user, int[] permision);

@@ -1,4 +1,4 @@
-package model.service;
+package model;
 
 public class House extends Service{
     private String standradRoom;

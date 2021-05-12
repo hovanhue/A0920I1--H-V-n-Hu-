@@ -11,15 +11,37 @@ public class Employee {
     private String employeePhone;
     private String employeeEmail;
     private String employeeAddress;
-    private String employeeEducationDegree;
-    private String employeePosition;
-    private String employeeDivision;
-    private String employeeUserName;
+    private int employeePosition;
+    private int employeeEducationDegree;
+    private int employeeDivision;
+    private String userName;
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
     public Employee() {
     }
 
-    public Employee(int employeeId, String employeeName, String employeeBirthday, String employeeIDCard, double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress, String employeeEducationDegree, String employeePosition, String employeeDivision, String employeeUserName) {
+    public Employee(String employeeName, String employeeBirthday, String employeeIDCard, double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress, int employeePosition, int employeeEducationDegree, int employeeDivision, String userName) {
+        this.employeeName = employeeName;
+        this.employeeBirthday = employeeBirthday;
+        this.employeeIDCard = employeeIDCard;
+        this.employeeSalary = employeeSalary;
+        this.employeePhone = employeePhone;
+        this.employeeEmail = employeeEmail;
+        this.employeeAddress = employeeAddress;
+        this.employeePosition = employeePosition;
+        this.employeeEducationDegree = employeeEducationDegree;
+        this.employeeDivision = employeeDivision;
+        this.userName = userName;
+    }
+
+    public Employee(int employeeId, String employeeName, String employeeBirthday, String employeeIDCard, double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress, int employeePosition, int employeeEducationDegree, int employeeDivision, String userName) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeBirthday = employeeBirthday;
@@ -28,10 +50,10 @@ public class Employee {
         this.employeePhone = employeePhone;
         this.employeeEmail = employeeEmail;
         this.employeeAddress = employeeAddress;
-        this.employeeEducationDegree = employeeEducationDegree;
         this.employeePosition = employeePosition;
+        this.employeeEducationDegree = employeeEducationDegree;
         this.employeeDivision = employeeDivision;
-        this.employeeUserName = employeeUserName;
+        this.userName = userName;
     }
 
     public int getEmployeeId() {
@@ -98,35 +120,27 @@ public class Employee {
         this.employeeAddress = employeeAddress;
     }
 
-    public String getEmployeeEducationDegree() {
-        return employeeEducationDegree;
-    }
-
-    public void setEmployeeEducationDegree(String employeeEducationDegree) {
-        this.employeeEducationDegree = employeeEducationDegree;
-    }
-
-    public String getEmployeePosition() {
+    public int getEmployeePosition() {
         return employeePosition;
     }
 
-    public void setEmployeePosition(String employeePosition) {
+    public void setEmployeePosition(int employeePosition) {
         this.employeePosition = employeePosition;
     }
 
-    public String getEmployeeDivision() {
+    public int getEmployeeEducationDegree() {
+        return employeeEducationDegree;
+    }
+
+    public void setEmployeeEducationDegree(int employeeEducationDegree) {
+        this.employeeEducationDegree = employeeEducationDegree;
+    }
+
+    public int getEmployeeDivision() {
         return employeeDivision;
     }
 
-    public void setEmployeeDivision(String employeeDivision) {
+    public void setEmployeeDivision(int employeeDivision) {
         this.employeeDivision = employeeDivision;
-    }
-
-    public String getEmployeeUserName() {
-        return employeeUserName;
-    }
-
-    public void setEmployeeUserName(String employeeUserName) {
-        this.employeeUserName = employeeUserName;
     }
 }

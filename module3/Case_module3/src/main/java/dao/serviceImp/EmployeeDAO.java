@@ -1,7 +1,7 @@
 package dao.serviceImp;
 
 import dao.EmployeeImpl;
-import model.Employee;
+import model.*;
 import ultils.ConnectionDB;
 
 import java.sql.Connection;
@@ -16,8 +16,9 @@ public class EmployeeDAO implements EmployeeImpl {
     private static final String SELECT_EMPLOYEE_BY_ID = "Select * from employee where employee_id = ?";
     private static final String SELECT_ALL_EMPLOYEE = "Select * from employee";
     private static final String DELETE_EMPLOYEE_BY_ID = "Delete from employee where employee_id = ?";
-    private static final String UPDATE_EMPLOYEE = "Update employee set employee_name = ?, employee_birthday = ?, employee_birthday = ? " +
-           "employee_idCard = ? employee_salary = ? employee_phone = ? employee_email = ?   employee_address = ? where employee_id = ?";
+    private static final String UPDATE_EMPLOYEE = "Update employee set employee_name = ?, employee_birthday = ?," +
+           "employee_idCard = ?, employee_salary = ?, employee_phone = ?, employee_email = ?, employee_address = ?," +
+            "postion_id = ?, education_degree_id = ?, division_id = ?, username= ? where employee_id = ?";
 
     @Override
     public void insertEmployee(Employee employee) {
@@ -34,10 +35,10 @@ public class EmployeeDAO implements EmployeeImpl {
             statement.setString(6, employee.getEmployeePhone());
             statement.setString(7, employee.getEmployeeEmail());
             statement.setString(8, employee.getEmployeeAddress());
-            statement.setString(9, employee.getEmployeeEducationDegree());
-            statement.setString(10, employee.getEmployeePosition());
-            statement.setString(11, employee.getEmployeeDivision());
-            statement.setString(12, employee.getEmployeeUserName());
+            statement.setInt(9, employee.getEmployeePosition());
+            statement.setInt(10, employee.getEmployeeEducationDegree());
+            statement.setInt(11, employee.getEmployeeDivision());
+            statement.setString(12, employee.getUserName());
             statement.executeUpdate();
         }catch (SQLException e){
             e.printStackTrace();
@@ -67,18 +68,18 @@ public class EmployeeDAO implements EmployeeImpl {
             ResultSet rs = statement.executeQuery();
 
             while (rs.next()){
-                String employeeName = rs.getString("name");
-                String employeeBirthday = rs.getString("birthday");
-                String employeeIDCard = rs.getString("idcard");
-                double employeeSalary = rs.getDouble("salary");
-                String employeePhone = rs.getString("phone");
-                String employeeEmail = rs.getString("email");
-                String employeeAddress = rs.getString("address");
-                String employeeEducationDegree = rs.getString("educationDegree");
-                String employeePosition = rs.getString("position");
-                String employeeDivision = rs.getString("division");
+                String employeeName = rs.getString("employee_name");
+                String employeeBirthday = rs.getString("employee_birthday");
+                String employeeIDCard = rs.getString("employee_idcard");
+                double employeeSalary = rs.getDouble("employee_salary");
+                String employeePhone = rs.getString("employee_phone");
+                String employeeEmail = rs.getString("employee_email");
+                String employeeAddress = rs.getString("employee_address");
+                int employeeEducationDegree = rs.getInt("education_Degree_id");
+                int employeePosition = rs.getInt("postion_id");
+                int employeeDivision = rs.getInt("division_id");
                 String employeeUserName = rs.getString("username");
-                employee = new Employee(id, employeeName, employeeBirthday, employeeIDCard, employeeSalary,employeePhone,employeeEmail,employeeAddress,employeeEducationDegree,employeePosition,employeeDivision,employeeUserName);
+                employee = new Employee(id, employeeName, employeeBirthday, employeeIDCard, employeeSalary,employeePhone,employeeEmail,employeeAddress,employeePosition,employeeEducationDegree,employeeDivision,employeeUserName);
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -96,17 +97,17 @@ public class EmployeeDAO implements EmployeeImpl {
             statement = connection.prepareStatement(SELECT_ALL_EMPLOYEE);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
-                int employeeId = resultSet.getInt("id");
-                String employeeName = resultSet.getString("name");
-                String employeeBirthday = resultSet.getString("birthday");
-                String employeeIDCard = resultSet.getString("idcard");
-                double employeeSalary = resultSet.getDouble("salary");
-                String employeePhone = resultSet.getString("phone");
-                String employeeEmail = resultSet.getString("email");
-                String employeeAddress = resultSet.getString("address");
-                String employeeEducationDegree = resultSet.getString("educationDegree");
-                String employeePosition = resultSet.getString("position");
-                String employeeDivision = resultSet.getString("division");
+                int employeeId = resultSet.getInt("employee_id");
+                String employeeName = resultSet.getString("employee_name");
+                String employeeBirthday = resultSet.getString("employee_birthday");
+                String employeeIDCard = resultSet.getString("employee_idcard");
+                double employeeSalary = resultSet.getDouble("employee_salary");
+                String employeePhone = resultSet.getString("employee_phone");
+                String employeeEmail = resultSet.getString("employee_email");
+                String employeeAddress = resultSet.getString("employee_address");
+                int employeeEducationDegree = resultSet.getInt("education_Degree_id");
+                int employeePosition = resultSet.getInt("postion_id");
+                int employeeDivision = resultSet.getInt("division_id");
                 String employeeUserName = resultSet.getString("username");
                 Employee employee = new Employee(employeeId, employeeName, employeeBirthday, employeeIDCard,employeeSalary,employeePhone,employeeEmail,employeeAddress,employeeEducationDegree,employeePosition,employeeDivision,employeeUserName);
                 employeeList.add(employee);
@@ -142,10 +143,10 @@ public class EmployeeDAO implements EmployeeImpl {
             statement.setString(5, employee.getEmployeePhone());
             statement.setString(6, employee.getEmployeeEmail());
             statement.setString(7, employee.getEmployeeAddress());
-            statement.setString(8, employee.getEmployeeEducationDegree());
-            statement.setString(9, employee.getEmployeePosition());
-            statement.setString(10, employee.getEmployeeDivision());
-            statement.setString(11, employee.getEmployeeUserName());
+            statement.setInt(8, employee.getEmployeeEducationDegree());
+            statement.setInt(9, employee.getEmployeePosition());
+            statement.setInt(10, employee.getEmployeeDivision());
+            statement.setString(11, employee.getUserName());
             statement.setInt(12, employee.getEmployeeId());
 
             statement.executeUpdate();
@@ -167,4 +168,31 @@ public class EmployeeDAO implements EmployeeImpl {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public Position getPosition(int id) {
+        return null;
+    }
+
+    @Override
+    public EducationDegree getEducationDegree(int id) {
+        return null;
+    }
+
+    @Override
+    public Division getDivision(int id) {
+        return null;
+    }
+
+    @Override
+    public void insertUser(User user) {
+
+    }
+
+    @Override
+    public void insertUserRole(UserRole userRole) {
+
+    }
+
+
 }

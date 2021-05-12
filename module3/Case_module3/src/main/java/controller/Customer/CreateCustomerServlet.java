@@ -1,4 +1,4 @@
-package controller;
+package controller.Customer;
 
 import dao.CustomerImpl;
 import dao.serviceImp.CustomerDAO;

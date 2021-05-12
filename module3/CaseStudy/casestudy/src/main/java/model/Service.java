@@ -1,4 +1,4 @@
-package model.service;
+package model;
 
 public abstract class Service {
     private String nameService;
