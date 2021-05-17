@@ -15,7 +15,7 @@ public class EmployeController {
     @RequestMapping(value = "showform", method = RequestMethod.GET)
     public String showForm(ModelMap model) {
         model.addAttribute("employee", new Employee());
-        return "employee/create";
+        return "create";
     }
 
     @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
@@ -23,7 +23,7 @@ public class EmployeController {
         model.addAttribute("name", employee.getName());
         model.addAttribute("contactNumber", employee.getContactNumber());
         model.addAttribute("id", employee.getId());
-        return "employee/info";
+        return "info";
     }
 
 }
