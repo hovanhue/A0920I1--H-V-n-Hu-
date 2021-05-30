@@ -1,25 +1,25 @@
-com/codegym/ApplicationInitializer.java
- com.codegym.ApplicationInitializer
-com/codegym/model/Customer.java
- com.codegym.model.Customer
-com/codegym/ProvinceController.java
- com.codegym.ProvinceController
-com/codegym/service/impl/ProvinceServiceImpl.java
- com.codegym.service.impl.ProvinceServiceImpl
-com/codegym/service/CustomerService.java
- com.codegym.service.CustomerService
-com/codegym/repository/ProvinceRepository.java
- com.codegym.repository.ProvinceRepository
-com/codegym/service/ProvinceService.java
- com.codegym.service.ProvinceService
-com/codegym/repository/CustomerRepository.java
- com.codegym.repository.CustomerRepository
-com/codegym/service/impl/CustomerServiecImpl.java
- com.codegym.service.impl.CustomerServiecImpl
-com/codegym/formatter/ProvinceFormatter.java
- com.codegym.formatter.ProvinceFormatter
 com/codegym/model/Province.java
  com.codegym.model.Province
+com/codegym/model/Customer.java
+ com.codegym.model.Customer
+com/codegym/repository/ProvinceRepository.java
+ com.codegym.repository.ProvinceRepository
+com/codegym/ApplicationInitializer.java
+ com.codegym.ApplicationInitializer
+com/codegym/service/impl/ProvinceServiceImpl.java
+ com.codegym.service.impl.ProvinceServiceImpl
+com/codegym/service/ProvinceService.java
+ com.codegym.service.ProvinceService
+com/codegym/formatter/ProvinceFormatter.java
+ com.codegym.formatter.ProvinceFormatter
+com/codegym/service/CustomerService.java
+ com.codegym.service.CustomerService
+com/codegym/repository/CustomerRepository.java
+ com.codegym.repository.CustomerRepository
+com/codegym/controller/ProvinceController.java
+ com.codegym.controller.ProvinceController
+com/codegym/service/impl/CustomerServiecImpl.java
+ com.codegym.service.impl.CustomerServiecImpl
 com/codegym/ApplicationConfig.java
  com.codegym.ApplicationConfig
 com/codegym/controller/CustomerController.java

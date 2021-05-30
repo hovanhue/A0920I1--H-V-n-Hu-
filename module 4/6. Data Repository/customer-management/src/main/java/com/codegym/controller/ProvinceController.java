@@ -5,6 +5,8 @@ import com.codegym.model.Province;
 import com.codegym.service.CustomerService;
 import com.codegym.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -22,8 +24,8 @@ public class ProvinceController {
     private CustomerService customerService;
 
     @GetMapping("/provinces")
-    public ModelAndView listProvinces(){
-        Iterable<Province> provinces = provinceService.findAll();
+    public ModelAndView listProvinces(@PageableDefault(value = 5) Pageable pageable){
+        Iterable<Province> provinces = provinceService.findAll(pageable);
         ModelAndView modelAndView = new ModelAndView("/province/list");
         modelAndView.addObject("provinces", provinces);
         return modelAndView;

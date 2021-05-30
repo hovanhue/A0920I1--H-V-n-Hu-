@@ -4,6 +4,8 @@ import com.codegym.model.Province;
 import com.codegym.repository.ProvinceRepository;
 import com.codegym.service.ProvinceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public class ProvinceServiceImpl implements ProvinceService {
 
@@ -11,8 +13,8 @@ public class ProvinceServiceImpl implements ProvinceService {
     private ProvinceRepository provinceRepository;
 
     @Override
-    public Iterable<Province> findAll() {
-        return provinceRepository.findAll();
+    public Page<Province> findAll(Pageable pageable) {
+        return provinceRepository.findAll(pageable);
     }
 
     @Override
