@@ -13,7 +13,7 @@
 </center>
 <form action="/">
     <label>
-        <input type="text" name="key_search">
+        <input type="text" name="key_seach">
     </label>
     <input type="submit" value="Search">
 </form>
@@ -38,5 +38,10 @@
     </tr>
     </tbody>
 </table>
+<div>
+    <a th:href="@{'/'(page=${blogs.number - 1}, key_search=${key_seach})}" th:if="${blogs.hasPrevious()}">Previous</a>
+    <span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
+    <a th:href="@{'/'(page=${blogs.number + 1}, key_search=${key_seach})}" th:if="${blogs.hasNext()}">Next</a>
+</div>
 </body>
 </html>
