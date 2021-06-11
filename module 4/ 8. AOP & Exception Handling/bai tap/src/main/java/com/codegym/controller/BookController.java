@@ -3,14 +3,12 @@ package com.codegym.controller;
 import com.codegym.exception.RentBookException;
 import com.codegym.model.Book;
 import com.codegym.model.RentBook;
-import com.codegym.servicce.BookService;
-import com.codegym.servicce.RentBookService;
+import com.codegym.service.BookService;
+import com.codegym.service.RentBookService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -24,20 +22,7 @@ public class BookController {
     RentBookService rentBookService;
 
     @GetMapping("/")
-    public ModelAndView getHome(Model model,
-             @RequestParam(name ="page", required = false,defaultValue = "0") Integer page,
-             @RequestParam(name = "size", required = false, defaultValue = "5")Integer size,
-             @RequestParam(name = "sort", required = false, defaultValue = "ASC")String sort){
-        Sort sortable = null;
-        if (sort.equals("ASC")){
-            sortable = Sort.by("id").ascending();
-        }
-        if (sort.equals("DESC")){
-            sortable= Sort.by("id").descending();
-        }
-        assert sortable != null;
-        Pageable pageable = PageRequest.of(page,size,sortable);
-
+    public ModelAndView getHome(@PageableDefault(value = 5)Pageable pageable){
         return new ModelAndView("book/list", "books", bookService.findAll(pageable));
     }
 

@@ -12,20 +12,21 @@ public class Customer {
     private String firstName;
     private String lastName;
 
+    @Column(unique = true)
+    private String email;
+
     @ManyToOne
-    @JoinColumn(name = "province_id")
+    @JoinColumn(name = "id")
     private Province province;
 
     public Customer() {}
 
-    public Customer(String firstName, String lastName) {
+    public Customer(Long id, String firstName, String lastName, String email, Province province) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Customer[id=%d, firstName='%s', lastName='%s']", id, firstName, lastName);
+        this.email = email;
+        this.province = province;
     }
 
     public Long getId() {

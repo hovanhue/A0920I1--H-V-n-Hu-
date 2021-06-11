@@ -7,7 +7,9 @@ import com.codegym.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CustomerServiecImpl implements CustomerService {
 
     @Autowired
@@ -20,7 +22,7 @@ public class CustomerServiecImpl implements CustomerService {
 
     @Override
     public Customer findById(Long id) {
-        return customerRepository.findOne(id);
+        return customerRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -30,7 +32,7 @@ public class CustomerServiecImpl implements CustomerService {
 
     @Override
     public void remove(Long id) {
-        customerRepository.delete(id);
+        customerRepository.deleteById(id);
     }
 
     @Override

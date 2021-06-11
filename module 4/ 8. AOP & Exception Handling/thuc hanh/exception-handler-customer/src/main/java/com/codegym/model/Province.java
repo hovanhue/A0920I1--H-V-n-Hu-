@@ -18,8 +18,10 @@ public class Province {
     public Province() {
     }
 
-    public Province(String name) {
+    public Province(Long id, String name, Set<Customer> customers) {
+        this.id = id;
         this.name = name;
+        this.customers = customers;
     }
 
     public Long getId() {

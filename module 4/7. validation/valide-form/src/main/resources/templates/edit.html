@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<center>
+    <h1>Change Information Users</h1>
+    <h3>
+        <a href="/">back list users</a>
+    </h3>
+</center>
+<form th:action="@{/update}" method="post" th:object="${user}" >
+    <div>
+        <label>First Name</label>
+        <input type="text" th:field="*{firstName}" th:value="" readonly>
+    </div>
+    <div>
+        <label>Last Name</label>
+        <input type="text" th:field="*{lastName}" readonly>
+    </div>
+    <div>
+        <label>Age</label>
+        <input type="text" th:field="*{age}" readonly>
+    </div>
+    <div>
+        <label>Phone Number</label>
+        <input type="text" th:field="*{phoneNumber}" readonly>
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="text" th:field="*{email}" readonly>
+    </div>
+</form>
 </body>
 </html>

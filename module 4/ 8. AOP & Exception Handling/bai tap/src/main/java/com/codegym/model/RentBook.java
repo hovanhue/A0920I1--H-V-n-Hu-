@@ -8,7 +8,7 @@ public class RentBook {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "idBook")
     private Book book;
 
     public RentBook() {

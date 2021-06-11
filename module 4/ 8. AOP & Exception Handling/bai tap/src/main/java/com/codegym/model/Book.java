@@ -9,17 +9,17 @@ import javax.persistence.Id;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idBook;
     private String title;
     private double amount;
     private int quantity;
 
     public Integer getId() {
-        return id;
+        return idBook;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.idBook = id;
     }
 
     public String getTitle() {
@@ -50,7 +50,7 @@ public class Book {
     }
 
     public Book(Integer id, String title, double amount, int quantity) {
-        this.id = id;
+        this.idBook = id;
         this.title = title;
         this.amount = amount;
         this.quantity = quantity;
