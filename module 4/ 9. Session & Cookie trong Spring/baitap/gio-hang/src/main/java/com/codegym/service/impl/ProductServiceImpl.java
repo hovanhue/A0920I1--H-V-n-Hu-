@@ -11,7 +11,8 @@ import org.springframework.stereotype.Service;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
-    ProductRepository productRepository;
+    private ProductRepository productRepository;
+
     @Override
     public Iterable<Product> findAll() {
         return productRepository.findAll();
