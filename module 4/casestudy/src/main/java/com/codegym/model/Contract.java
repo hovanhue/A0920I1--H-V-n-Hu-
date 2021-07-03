@@ -14,7 +14,7 @@ public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NumberFormat
-    private int contract_id;
+    private Integer contract_id;
 
     @NotEmpty
     @Size(max = 45)
@@ -28,11 +28,11 @@ public class Contract {
 
     @NotEmpty
     @NumberFormat
-    private double contract_deposit;
+    private String contract_deposit;
 
     @NotEmpty
     @NumberFormat
-    private double contract_total_money;
+    private String contract_total_money;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
@@ -47,18 +47,6 @@ public class Contract {
     private Service service_id;
 
     public Contract() {
-    }
-
-    public Contract(int contract_id, @NotEmpty @Size(max = 45) String contract_start_date, @NotEmpty @Size(max = 45) String contract_end_date, @NotEmpty double contract_deposit,
-                    @NotEmpty double contract_total_money, Employee employee, Customer customer_id, Service service_id) {
-        this.contract_id = contract_id;
-        this.contract_start_date = contract_start_date;
-        this.contract_end_date = contract_end_date;
-        this.contract_deposit = contract_deposit;
-        this.contract_total_money = contract_total_money;
-        this.employee = employee;
-        this.customer_id = customer_id;
-        this.service_id = service_id;
     }
 
     public int getContract_id() {
@@ -85,19 +73,23 @@ public class Contract {
         this.contract_end_date = contract_end_date;
     }
 
-    public double getContract_deposit() {
+    public void setContract_id(Integer contract_id) {
+        this.contract_id = contract_id;
+    }
+
+    public String getContract_deposit() {
         return contract_deposit;
     }
 
-    public void setContract_deposit(double contract_deposit) {
+    public void setContract_deposit(String contract_deposit) {
         this.contract_deposit = contract_deposit;
     }
 
-    public double getContract_total_money() {
+    public String getContract_total_money() {
         return contract_total_money;
     }
 
-    public void setContract_total_money(double contract_total_money) {
+    public void setContract_total_money(String contract_total_money) {
         this.contract_total_money = contract_total_money;
     }
 

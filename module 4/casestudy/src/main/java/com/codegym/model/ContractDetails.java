@@ -11,8 +11,7 @@ public class ContractDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NumberFormat
-    private int contract_details_id;
+    private Integer contract_details_id;
 
     @ManyToOne
     @JoinColumn(name = "contract_id" )

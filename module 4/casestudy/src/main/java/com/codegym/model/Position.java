@@ -9,8 +9,7 @@ import java.util.List;
 public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty
-    private int position_id;
+    private Integer position_id;
 
     @NotEmpty
     @Size(max = 45)

@@ -1,38 +1,42 @@
 package com.codegym.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
-@IdClass(UserRole.class)
-public class UserRole implements Serializable {
+public class UserRole {
 
     @Id
-    @ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int userRoleId;
 
-    @Id
     @ManyToOne
-    @JoinColumn(name = "username")
+    @JoinColumn(name = "role_id", nullable=false)
+    private Role role;
+
+    @ManyToOne
+    @JoinColumn(name = "username", nullable=false)
     private User username;
 
-
-    public UserRole(){
-
+    public UserRole() {
     }
 
-    public UserRole(Role role_id, User username) {
-        this.role_id = role_id;
-        this.username = username;
+    public UserRole(int userRoleId, String username) {
     }
 
-    public Role getRole_id() {
-        return role_id;
+    public int getUserRoleId() {
+        return userRoleId;
     }
 
-    public void setRole_id(Role role_id) {
-        this.role_id = role_id;
+    public void setUserRoleId(int userRoleId) {
+        this.userRoleId = userRoleId;
+    }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     public User getUsername() {

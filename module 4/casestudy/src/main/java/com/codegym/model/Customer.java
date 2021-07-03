@@ -14,8 +14,7 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NumberFormat
-    private int customer_id;
+    private Integer customer_id;
 
     @ManyToOne
     @JoinColumn(name = "customer_type_id")
@@ -53,23 +52,24 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int customer_id, CustomerType customerType, @NotEmpty @Size(max = 45) String customer_name, @NotEmpty @Size(max = 45) String customer_birthday, @NotEmpty String customer_gender, @NotEmpty @Size(max = 45) String customer_id_card, @NotEmpty @Size(max = 45) String customer_phone, @NotEmpty @Size(max = 45) @Email(regexp = "^[a-z][a-z0-9_\\.]{5,32}@[a-z0-9]{2,}(\\.[a-z0-9]{2,4}){1,2}$") String customer_email, @NotEmpty @Size(max = 45) String customer_address) {
-        this.customer_id = customer_id;
-        this.customerType = customerType;
-        this.customer_name = customer_name;
-        this.customer_birthday = customer_birthday;
-        this.customer_gender = customer_gender;
-        this.customer_id_card = customer_id_card;
-        this.customer_phone = customer_phone;
-        this.customer_email = customer_email;
-        this.customer_address = customer_address;
-    }
+//    public Customer(int customer_id, CustomerType customerType, @NotEmpty @Size(max = 45) String customer_name, @NotEmpty @Size(max = 45) String customer_birthday, @NotEmpty String customer_gender, @NotEmpty @Size(max = 45) String customer_id_card, @NotEmpty @Size(max = 45) String customer_phone, @NotEmpty @Size(max = 45) @Email(regexp = "^[a-z][a-z0-9_\\.]{5,32}@[a-z0-9]{2,}(\\.[a-z0-9]{2,4}){1,2}$") String customer_email, @NotEmpty @Size(max = 45) String customer_address) {
+//        this.customer_id = customer_id;
+//        this.customerType = customerType;
+//        this.customer_name = customer_name;
+//        this.customer_birthday = customer_birthday;
+//        this.customer_gender = customer_gender;
+//        this.customer_id_card = customer_id_card;
+//        this.customer_phone = customer_phone;
+//        this.customer_email = customer_email;
+//        this.customer_address = customer_address;
+//    }
 
-    public int getCustomer_id() {
+
+    public Integer getCustomer_id() {
         return customer_id;
     }
 
-    public void setCustomer_id(int customer_id) {
+    public void setCustomer_id(Integer customer_id) {
         this.customer_id = customer_id;
     }
 

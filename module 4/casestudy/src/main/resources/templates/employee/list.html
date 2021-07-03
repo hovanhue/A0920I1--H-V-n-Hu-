@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/header::header}">
+    <meta charset="UTF-8">
+    <title>List All Service</title>
+</head>
+<body>
+<nav th:replace="~{layout/navbar::navbar}"></nav>
+<center>
+    <h3><b>LIST ALL EMPLOYEES</b></h3>
+</center>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="btnModalCreate">Create</button>
+
+<form th:action="@{/employee/search}" method="get" class="form-group row">
+    <label class="col-sm-1 col-form-label">Search: </label>
+    <div class="col-sm-5">
+        <input type="text" class="form-control" id="inputSearch" name="search" placeholder="search by name">
+    </div>
+</form>
+
+<!--Show list-->
+<table class="table table-bordered table-striped table-hover" id="searchTable">
+    <thead class="thead-inverse">
+    <tr>
+        <th>Id</th>
+        <th>Name Employee</th>
+        <th>Birthday</th>
+        <th>ID Card</th>
+        <th>Salary</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Position</th>
+        <th>Education Degree</th>
+        <th>Division</th>
+        <th>Username</th>
+<!--        <th>Roles</th>-->
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee:${employeeList}">
+
+        <td scope="row" th:text="${employee.employee_id}"></td>
+        <td th:text="${employee.employee_name}"></td>
+        <td th:text="${employee.employee_birthday}"></td>
+        <td th:text="${employee.employee_id_card}"></td>
+        <td th:text="${employee.employee_salary}"></td>
+        <td th:text="${employee.employee_phone}"></td>
+        <td th:text="${employee.employee_email}"></td>
+        <td th:text="${employee.employee_address}"></td>
+        <td th:text="${employee.position.position_name}"></td>
+        <td th:text="${employee.education_degree.education_degree_name}"></td>
+        <td th:text="${employee.division.division_name}"></td>
+        <td th:text="${employee.user.username}"></td>
+        <td>
+            <button type="button" class="btn btn-success" id="btnModalEdit"
+                    th:onclick="'javascript:showEdit(\''+ ${employee.employee_id}+ '\');'">
+                Edit
+            </button>
+            <button type="button" class="btn btn-danger" id="btnModalDelete"
+                    th:onclick="'javascript:showDelete(\''+ ${employee.employee_id} + '\');'">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<nav aria-label="   Page navigation example" style="float: right; margin-right: 25px">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" th:href="@{/employee(page = 0, search = ${stringAfterCheck})}">Prevous</a></li>
+        <th:block th:each="i: ${#numbers.sequence(0, employeeList.totalPages - 1)}">
+            <li class="page-item">
+                <a class="page-link" th:href="@{/employee(page=${i},searchN=${stringAfterCheck})}" th:text="${i + 1}"></a>
+            </li>
+        </th:block>
+        <li class="page-item"><a class="page-link" th:href="@{/employee(page = ${employeeList.totalPages - 1}, search = ${stringAfterCheck})}">Next</a></li>
+    </ul>
+</nav>
+
+<!-- Modal Create-->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Edit-->
+<div class="modal fade" id="modelId2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Change Information Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body2">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Delete-->
+<div class="modal fade" id="modelId3" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body3">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Show list-->
+<table hidden="hidden" class="table table-bordered table-striped table-hover" id="searchTable2">
+    <thead class="thead-inverse">
+    <tr>
+        <th>Id</th>
+        <th>Name Employee</th>
+        <th>Birthday</th>
+        <th>ID Card</th>
+        <th>Salary</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Position</th>
+        <th>Education Degree</th>
+        <th>Division</th>
+        <th>Username</th>
+        <th>Roles</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee:${employeeList}">
+        <td scope="row" th:text="${employee.employee_id}"></td>
+        <td th:text="${employee.employee_name}"></td>
+        <td th:text="${employee.employee_birthday}"></td>
+        <td th:text="${employee.employee_id_card}"></td>
+        <td th:text="${employee.employee_salary}"></td>
+        <td th:text="${employee.employee_phone}"></td>
+        <td th:text="${employee.employee_email}"></td>
+        <td th:text="${employee.employee_address}"></td>
+        <td th:text="${employee.position.position_name}"></td>
+        <td th:text="${employee.education_degree.education_degree_name}"></td>
+        <td th:text="${employee.division.division_name}"></td>
+        <td th:text="${employee.user.username}"></td>
+        <td>
+            <button type="button" class="btn btn-success" id="btnModalEdit2"
+                    th:onclick="'javascript:showEdit(\''+ ${employee.employee_id}+ '\');'">
+                Edit
+            </button>
+            <button type="button" class="btn btn-danger" id="btnModalDelete2"
+                    th:onclick="'javascript:showDelete(\''+ ${employee.employee_id} + '\');'">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<!--Script-->
+
+<script>
+    $("#btnModalCreate").click(function () {
+
+        var userRole = {
+            "role_id": $("#inputUserRole").val(),
+            "username":$("#inputUsername").val(),
+        };
+
+        console.log(userRole);
+
+        var user = {
+            "username":$("#inputUsername").val(),
+            "password":$("#inputPassword").val()
+        };
+
+        $.ajax({
+            type: "GET",
+            url: "/employee/create",
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body").html(data);
+                $("#modelId").modal('show');
+                alert("Done!")
+            }
+        })
+    });
+    function showEdit(id) {
+        $.ajax({
+            type: "GET",
+            url: "/employee/edit/"+id,
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body2").html(data);
+                $("#modelId2").modal('show');
+            }
+        })
+    }
+    function showDelete(id) {
+        $.ajax({
+            type: "GET",
+            url: "/employee/delete/"+id,
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body3").html(data);
+                $("#modelId3").modal('show');
+            }
+        })
+    }
+    // Hàm search realtime
+    $(document).ready(function () {
+        $("#inputSearch").on("keyup", function () {
+
+            var search = document.getElementById("inputSearch").value;
+
+            $.ajax({
+                type: "GET",
+                url: "/employee/search?search=" + search,
+                dataType: "HTML",
+                success: function (data) {
+                    $("#searchTable").table('hide');
+                    $("#searchTable2").table('show');
+                    $("#searchTable2").html(data);
+                }
+            })
+        })
+    });
+    function actionDelete(id){
+        $.ajax({
+            type: "POST",
+            url: "/employee/delete/" + id,
+            dataType: "HTML",
+            success: function (data) {
+                var messageDelete = "Delete!!!";
+                $("#modelId3").modal('hide');
+                $("#searchTable").html(data);
+                $(".modal-body3").html(messageDelete);
+                $("#modelId3").modal('show');
+            }
+
+        })
+    }
+</script>
+</body>
+</html>

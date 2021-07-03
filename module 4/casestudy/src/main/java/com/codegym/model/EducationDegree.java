@@ -9,8 +9,7 @@ import java.util.List;
 public class EducationDegree {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty
-    private int education_degree_id;
+    private Integer education_degree_id;
 
     @NotEmpty
     @Size(max = 45)

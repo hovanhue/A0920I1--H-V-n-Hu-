@@ -11,8 +11,7 @@ import javax.validation.constraints.Size;
 public class AttachService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NumberFormat
-    private int attach_service_id;
+    private Integer attach_service_id;
 
     @NotEmpty
     @Size(max = 45)
@@ -20,7 +19,7 @@ public class AttachService {
 
     @NotEmpty
     @NumberFormat
-    private double attach_service_cost;
+    private String attach_service_cost;
 
     @NotEmpty
     @NumberFormat
@@ -33,13 +32,7 @@ public class AttachService {
     public AttachService() {
     }
 
-    public AttachService(int attach_service_id, @NotEmpty @Size(max = 45) String attach_service_name, @NotEmpty double attach_service_cost, @NotEmpty int attach_service_unit, @NotEmpty @Size(max = 45) String attach_service_status) {
-        this.attach_service_id = attach_service_id;
-        this.attach_service_name = attach_service_name;
-        this.attach_service_cost = attach_service_cost;
-        this.attach_service_unit = attach_service_unit;
-        this.attach_service_status = attach_service_status;
-    }
+
 
     public int getAttach_service_id() {
         return attach_service_id;
@@ -57,11 +50,15 @@ public class AttachService {
         this.attach_service_name = attach_service_name;
     }
 
-    public double getAttach_service_cost() {
+    public void setAttach_service_id(Integer attach_service_id) {
+        this.attach_service_id = attach_service_id;
+    }
+
+    public String getAttach_service_cost() {
         return attach_service_cost;
     }
 
-    public void setAttach_service_cost(double attach_service_cost) {
+    public void setAttach_service_cost(String attach_service_cost) {
         this.attach_service_cost = attach_service_cost;
     }
 

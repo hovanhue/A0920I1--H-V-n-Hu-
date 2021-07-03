@@ -1,10 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/header::header}">
+    <meta charset="UTF-8">
+    <title>List All Customer</title>
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>-->
 </head>
 <body>
-$END$
+<nav th:replace="~{layout/navbar::navbar}"></nav>
+<center>
+    <h3><b>LIST ALL CUSTOMERS</b></h3>
+</center>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" id="btnModalCreate">Create</button>
+
+<form th:action="@{/customer/search}" method="get">
+    <label>Search: </label>
+    <input type="text" id="inputSearch" name="search" placeholder="search by name">
+</form>
+
+<!--Show list-->
+
+<table class="table table-bordered table-striped table-hover" id="searchTable">
+    <thead class="thead-inverse">
+    <tr>
+        <th>Id</th>
+        <th>Customer Type</th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Gender</th>
+        <th>ID Card</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer:${customerList}">
+        <td scope="row" th:text="${customer.customer_id}"></td>
+        <td th:text="${customer.customerType.customer_type_name}"></td>
+        <td th:text="${customer.customer_name}"></td>
+        <td th:text="${customer.customer_birthday}"></td>
+        <td th:text="${customer.customer_gender}"></td>
+        <td th:text="${customer.customer_id_card}"></td>
+        <td th:text="${customer.customer_phone}"></td>
+        <td th:text="${customer.customer_email}"></td>
+        <td th:text="${customer.customer_address}"></td>
+        <td>
+            <button type="button" class="btn btn-success" id="btnModalEdit"
+                    th:onclick="'javascrip:showEdit(\''+${customer.customer_id}+'\')'">
+                Edit
+            </button>
+            <button type="button" class="btn btn-danger" id="btnModalDelete"
+                    th:onclick="'javascript:showDelete(\''+ ${customer.customer_id} + '\');'">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+<table th:hidden="hidden" class="table table-bordered table-striped table-hover" id="searchTable2">
+    <thead class="thead-inverse">
+    <tr>
+        <th>Id</th>
+        <th>Customer Type</th>
+        <th>Name</th>
+        <th>Birthday</th>
+        <th>Gender</th>
+        <th>ID Card</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer:${customerList}">
+        <td scope="row" th:text="${customer.customer_id}"></td>
+        <td th:text="${customer.customerType.customer_type_name}"></td>
+        <td th:text="${customer.customer_name}"></td>
+        <td th:text="${customer.customer_birthday}"></td>
+        <td th:text="${customer.customer_gender}"></td>
+        <td th:text="${customer.customer_id_card}"></td>
+        <td th:text="${customer.customer_phone}"></td>
+        <td th:text="${customer.customer_email}"></td>
+        <td th:text="${customer.customer_address}"></td>
+        <td>
+            <button type="button" class="btn btn-success" id="btnModalEdit2"
+                    th:onclick="'javascrip:showEdit(\''+${customer.customer_id}+'\')'">
+                Edit
+            </button>
+            <button type="button" class="btn btn-danger" id="btnModalDelete2"
+                    th:onclick="'javascript:showDelete(\''+ ${customer.customer_id} + '\');'">
+                Delete
+            </button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<nav aria-label="   Page navigation example" style="float: right; margin-right: 25px">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" th:href="@{/customer(page = 0, search = ${stringAfterCheck})}">Prevous</a></li>
+        <th:block th:each="i: ${#numbers.sequence(0, customerList.totalPages - 1)}">
+            <li class="page-item">
+                <a class="page-link" th:href="@{/customer(page=${i},search=${stringAfterCheck})}" th:text="${i + 1}"></a>
+            </li>
+        </th:block>
+        <li class="page-item"><a class="page-link" th:href="@{customer/(page = ${customerList.totalPages - 1}, search = ${stringAfterCheck})}">Next</a></li>
+    </ul>
+</nav>
+<!-- Modal Create-->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create Customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Edit -->
+<div class="modal fade" id="modelId2" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chane Information Customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body2">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Delete-->
+<div class="modal fade" id="modelId3" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body3">
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--Script-->
+
+<script>
+    $("#btnModalCreate").click(function () {
+        console.log("create");
+        $.ajax({
+            type: "GET",
+            url: "/customer/create",
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body").html(data);
+                $("#modelId").modal('show');
+            }
+        })
+    });
+    function showEdit(id) {
+        $.ajax({
+            type: "GET",
+            url: "/customer/edit/"+id,
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body2").html(data);
+                $("#modelId2").modal('show');
+            }
+        })
+    }
+    function showDelete(id) {
+        $.ajax({
+            type: "GET",
+            url: "/customer/delete/"+id,
+            dataType: "HTML",
+            success: function (data) {
+                $(".modal-body3").html(data);
+                $("#modelId3").modal('show');
+            }
+        })
+    }
+    // Hàm search realtime
+    $(document).ready(function () {
+        $("#inputSearch").on("keyup", function () {
+
+            var search = document.getElementById("inputSearch").value;
+            $.ajax({
+                type: "GET",
+                url: "/customer/search?search=" + search,
+                dataType: "HTML",
+                success: function (data) {
+                    $("#searchTable").html(data);
+                }
+            })
+        })
+    });
+    function actionDelete(id){
+        $.ajax({
+            type: "POST",
+            url: "/customer/delete/" + id,
+            dataType: "HTML",
+            success: function (data) {
+                var messageDelete = "Delete!!!";
+                $("#modelId3").modal('hide');
+                $("#searchTable").html(data);
+                $(".modal-body3").html(messageDelete);
+                $("#modelId3").modal('show');
+            }
+        })
+    }
+</script>
 </body>
 </html>

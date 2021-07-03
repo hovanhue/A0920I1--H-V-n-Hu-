@@ -1,10 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Create Customer</title>
 </head>
+
 <body>
-$END$
+<center>
+    <h3><b>INFORMATION CUSTOMERS</b></h3>
+</center>
+<form th:action="@{customer/create}" method="post" th:object="${customers}">
+    <div class="form-group row">
+<!--        <input type="hidden" th:field="*{customer_id}">-->
+        <label for="customerType" class="col-sm-2 col-form-label">Customer Type</label>
+        <div class="col-sm-2">
+            <select class="form-control" id="customerType" th:field="*{customerType}" required>
+                <option th:each="c:${customertypes}" th:value="${c.customer_type_id}" th:text="${c.customer_type_name}" value=""></option>
+
+            </select>
+        </div>
+        <th:block>
+            <span style="color: red" th:if="${#fields.hasErrors('customerType')}" th:errors="*{customerType}">Name Error</span>
+        </th:block>
+    </div>
+
+    <div class="form-group row">
+        <label for="customerName" class="col-sm-2 col-form-label">Full Name</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="customerName" th:field="*{customer_name}">
+        </div>
+        <th:block>
+            <span style="color: red" th:if="${#fields.hasErrors('customer_name')}" th:errors="*{customer_name}">Name Error</span>
+        </th:block>
+    </div>
+
+    <div class="form-group row">
+        <label for="customer_birthday" class="col-sm-2 col-form-label">Birthday</label>
+        <div class="col-sm-8">
+            <input type="date" class="form-control" id="customer_birthday" th:field="*{customer_birthday}">
+        </div>
+        <th:block>
+            <span style="color: red" th:if="${#fields.hasErrors('customer_birthday')}" th:errors="*{customer_birthday}">Name Error</span>
+        </th:block>
+    </div>
+
+    <div class="form-group row">
+        <label for="customer_gender" class="col-sm-2 col-form-label">Gender</label>
+        <div class="col-sm-2">
+            <select class="form-control" id="customer_gender" th:field="*{customer_gender}">
+                <option value="1">Male</option>
+                <option value="2">Female</option>
+            </select>
+        </div>
+        <th:block>
+            <span style="color: red" th:if="${#fields.hasErrors('customer_gender')}" th:errors="*{customer_gender}">Name Error</span>
+        </th:block>
+    </div>
+
+    <div class="form-group row">
+        <label for="customer_id_card" class="col-sm-2 col-form-label">ID Card</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="customer_id_card" th:field="*{customer_id_card}">
+        </div>
+        <th:block>
+            <span style="color: red" th:if="${#fields.hasErrors('customer_id_card')}" th:errors="*{customer_id_card}">Name Error</span>
+        </th:block>
+    </div>
+
+    <div class="form-group row">
+        <label for="customer_phone" class="col-sm-2 col-form-label">Phone Number</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="customer_phone" th:field="*{customer_phone}">
+        </div>
+        <th:block>
+            <span style="color: red" th:if="${#fields.hasErrors('customer_phone')}" th:errors="*{customer_phone}">Name Error</span>
+        </th:block>
+    </div>
+
+    <div class="form-group row">
+        <label for="customer_email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="customer_email" th:field="*{customer_email}">
+        </div>
+        <th:block>
+            <span style="color: red" th:if="${#fields.hasErrors('customer_email')}" th:errors="*{customer_email}">Name Error</span>
+        </th:block>
+    </div>
+
+    <div class="form-group row">
+        <label for="customer_address" class="col-sm-2 col-form-label">Address</label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" id="customer_address" th:field="*{customer_address}">
+        </div>
+        <th:block>
+            <span style="color: red" th:if="${#fields.hasErrors('customer_address')}" th:errors="*{customer_address}">Name Error</span>
+        </th:block>
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="margin-left: 170px">Create</button>
+</form>
+
 </body>
 </html>

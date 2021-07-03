@@ -3,24 +3,25 @@ package com.codegym.model;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty
-    private int role_id;
+    private Integer role_id;
 
     @NotEmpty
     private String role_name;
 
+//    @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    private Set<User> users;
+
     public Role() {
     }
 
-    public Role(@NotEmpty int role_id, @NotEmpty String role_name) {
-        this.role_id = role_id;
+    public Role(@NotEmpty String role_name) {
         this.role_name = role_name;
-
     }
 
     public int getRole_id() {

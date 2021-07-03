@@ -12,8 +12,7 @@ public class CustomerType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NumberFormat
-    private int customer_type_id;
+    private Integer customer_type_id;
 
     @NotEmpty
     @Size(max = 45)

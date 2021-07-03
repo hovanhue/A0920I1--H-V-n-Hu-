@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="~{layout/header::header}">
     <meta charset="UTF-8">
-    <title>Remove Customer</title>
+    <title>Remove Service</title>
 </head>
 <body>
 
-<input type="hidden" th:field="${customer.customer_id}">
+<input type="hidden" th:field="${service.service_id}">
 <div>
-    Name: <p th:text="${customer.customer_name}"></p>
+    Name: <p th:text="${service.service_name}"></p>
     Do you sure to delete?
 </div>
-<button id="clickDelete" type="button" class="btn btn-danger"
-        th:onclick="'javascript:actionDelete(\''+ ${customer.customer_id} + '\');'">Delete</button>
+<button id="clickDelete" type="button" class="btn btn-danger" style="margin-left: 100px"
+        th:onclick="'javascript:actionDelete(\''+ ${service.service_id} + '\');'">Delete</button>
 
 </body>
 </html>

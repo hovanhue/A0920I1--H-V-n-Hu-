@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Remove Service</title>
+</head>
+<body>
+
+<input type="hidden" th:field="${contracts.contract_id}">
+<div>
+    Customer: <p th:text="${contracts.customer_id.customer_name}"></p>
+    Do you sure to delete?
+</div>
+<button id="clickDelete" type="button" class="btn btn-danger" style="margin-left: 100px"
+        th:onclick="'javascript:actionDelete(\''+ ${contracts.contract_id} + '\');'">Delete</button>
+
+</body>
+</html>

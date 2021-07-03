@@ -9,8 +9,7 @@ import java.util.List;
 public class Division {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty
-    private int division_id;
+    private Integer division_id;
 
     @NotEmpty @Size(max = 45)
     private String division_name;

@@ -9,8 +9,7 @@ import java.util.List;
 public class ServiceType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @NotEmpty
-    private int service_type_id;
+    private Integer service_type_id;
 
     @NotEmpty
     @Size(max = 45)

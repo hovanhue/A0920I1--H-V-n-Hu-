@@ -1,10 +1,9 @@
 package com.codegym.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -15,11 +14,24 @@ public class User {
     @NotEmpty
     private String password;
 
-    public User(@NotEmpty String username, @NotEmpty String password) {
-        this.username = username;
-        this.password = password;
+    @NotEmpty
+    private String rememberToken;
 
-    }
+//    @ManyToMany
+//    @JoinTable(
+//            name = "user_role",
+//            joinColumns = @JoinColumn(name = "username"),
+//            inverseJoinColumns = @JoinColumn(name = "role_id")
+//    )
+//    private Set<Role> roles;
+//
+//    public Set<Role> getRoles() {
+//        return roles;
+//    }
+//
+//    public void setRoles(Set<Role> roles) {
+//        this.roles = roles;
+//    }
 
     public User() {
 
@@ -41,4 +53,11 @@ public class User {
         this.password = password;
     }
 
+    public String getRememberToken() {
+        return rememberToken;
+    }
+
+    public void setRememberToken(String rememberToken) {
+        this.rememberToken = rememberToken;
+    }
 }
