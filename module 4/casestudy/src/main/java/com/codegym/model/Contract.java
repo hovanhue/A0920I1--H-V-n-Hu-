@@ -49,13 +49,10 @@ public class Contract {
     public Contract() {
     }
 
-    public int getContract_id() {
+    public Integer getContract_id() {
         return contract_id;
     }
 
-    public void setContract_id(int contract_id) {
-        this.contract_id = contract_id;
-    }
 
     public String getContract_start_date() {
         return contract_start_date;

@@ -28,8 +28,8 @@ public class EmployeeController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private UserRoleService userRoleService;
+//    @Autowired
+//    private UserRoleService userRoleService;
 
     @Autowired
     private PositionService positionService;
@@ -79,7 +79,7 @@ public class EmployeeController {
 
     @GetMapping("/create")
     public ModelAndView showCreate(Model model){
-        model.addAttribute("userRole", new UserRole());
+        model.addAttribute("userRole", new User());
         return new ModelAndView("employee/create", "employees", new Employee());
     }
 
@@ -94,10 +94,10 @@ public class EmployeeController {
         User user = (User) json.get(1);
         userService.save(user);
 
-        UserRole userRole = (UserRole)json.get(0);
-        userRoleService.save(new UserRole(userRole.getUserRoleId(), user.getUsername()));
+//        UserRole userRole = (UserRole)json.get(0);
+//        userRoleService.save(new UserRole(userRole.getUserRoleId(), user.getUsername()));
         employeeService.saveEmployee(employee);
-        return "redirect:/employee/list";
+        return "redirect:/list";
     }
 
     @GetMapping("/edit/{id}")
@@ -106,8 +106,8 @@ public class EmployeeController {
     }
 
     @PostMapping("/edit")
-    public String editSuccess(@ModelAttribute Employee employee,Model model, UserRole userRole){
-        model.addAttribute("userRole", userRole);
+    public String editSuccess(@ModelAttribute Employee employee,Model model){
+//        model.addAttribute("userRole", userRole);
         employeeService.saveEmployee(employee);
         return "redirect:/employee/list";
     }

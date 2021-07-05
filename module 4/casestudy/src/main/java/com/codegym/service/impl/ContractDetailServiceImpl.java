@@ -19,4 +19,9 @@ public class ContractDetailServiceImpl implements ContractDetailService {
     public ContractDetails findContractDetailsById(int id) {
         return contractDetailsRepository.findById(id).orElse(null);
     }
+
+    @Override
+    public void save(ContractDetails contractDetails) {
+        contractDetailsRepository.save(contractDetails);
+    }
 }

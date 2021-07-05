@@ -1,6 +1,7 @@
 package com.codegym.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,6 +18,7 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Qualifier("userServiceImpl")
     @Autowired
     private UserDetailsService userDetailsService;
 
@@ -35,18 +37,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 //Cấu hình cho các đuòng dẫn không cần xác thực
-                .antMatchers("/login", "/register").permitAll()
+                .antMatchers("/","/login", "/register", "/logout").permitAll()
                 //Cấu hình cho các đường dẫn đăng nhập bằng Role là Member, Admin
-                .antMatchers("/user/**").hasAnyRole("USER", "ADMIN")
+                .antMatchers("/user/**").hasAnyRole("ROLE_USER", "ROLE_ADMIN")
                 //cấu hình cho đường dẫn admin, chỉ có Role admin mới vào được
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .and()
                 //formlogin
                 .formLogin()
                 //Đường dẫn trả về trang authentication
-                .loginPage("/login")
-                .usernameParameter("email")
-                .passwordParameter("password")
+//                .loginPage("/login")
+//                .usernameParameter("username")
+//                .passwordParameter("password")
                 //Nếu authentication thành công
                 .defaultSuccessUrl("/")
                 //Nếu authentication thất bại
@@ -60,7 +62,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/").permitAll()
+                .logoutSuccessUrl("/login").permitAll()
                 .invalidateHttpSession(true)
                 .deleteCookies("JSESSIONID")
         ;

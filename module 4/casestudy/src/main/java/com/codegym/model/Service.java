@@ -27,7 +27,7 @@ public class Service {
     private String service_cost;
 
     @NumberFormat
-    @NotEmpty
+//    @NotEmpty
     private int service_max_people;
 
     @ManyToOne
@@ -57,12 +57,8 @@ public class Service {
     public Service() {
     }
 
-    public int getService_id() {
+    public Integer getService_id() {
         return service_id;
-    }
-
-    public void setService_id(int service_id) {
-        this.service_id = service_id;
     }
 
     public String getService_name() {

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<form th:action="@{contract/details}" method="get" th:object="${view}">
+<form th:action="@{contract/details}" method="get" th:object="${contractDetails}">
     <input type="hidden" th:field="*{contract_details_id}">
     <div class="form-group row">
         <label for="attachService" class="col-sm-2 col-form-label">Attach Service</label>
@@ -13,7 +13,6 @@
                 <option th:each="a:${attachServices}" th:value="${a.attach_service_id}" th:text="${a.attach_service_name}" value=""></option>
             </select>
         </div>
-        <small style="color: red" th:error="*{attachService}">*</small>
     </div>
 
     <div class="form-group row">
@@ -21,7 +20,9 @@
         <div class="col-sm-8">
             <input type="text" class="form-control" id="quality" th:field="*{quality}">
         </div>
-        <small style="color: red" th:error="*{quality}">*</small>
+        <th:block>
+            <span th:if="${#fields.hasErrors('quality')}" th:errors="*{quality}">Name Error</span>
+        </th:block>
     </div>
 
     <button type="submit" class="btn btn-primary" style="justify-content: center; margin-left: 150px" >Update</button>

@@ -70,7 +70,7 @@ public class ServiceController {
             return "service/create";
         }
         service.saveService(services);
-        return "redirect:/list";
+        return "redirect:/service/list";
     }
 
     @GetMapping("/edit/{id}")
@@ -82,7 +82,7 @@ public class ServiceController {
     @PostMapping("/edit")
     public String editSuccess(@ModelAttribute Service servic){
         service.saveService(servic);
-        return "redirect:/";
+        return "redirect:/service/list";
     }
 
     @GetMapping("/delete/{id}")
@@ -96,6 +96,6 @@ public class ServiceController {
         service.deleteServiceById(id);
         Page<Service> services = service.findAllService(pageable);
         model.addAttribute("services", services);
-        return "redirect:/";
+        return "redirect:/service/list";
     }
 }

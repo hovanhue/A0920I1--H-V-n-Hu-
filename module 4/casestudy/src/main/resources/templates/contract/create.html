@@ -10,7 +10,7 @@
     <h3><b>INFORMATION CONTRACT</b></h3>
 </center>
 <form th:action="@{contract/create}" method="post" th:object="${contracts}">
-    <input type="hidden" th:field="*{contract_id}">
+
     <div class="form-group row">
         <label for="contract_start_date" class="col-sm-2 col-form-label">Contract Start Date</label>
         <div class="col-sm-8">
@@ -77,6 +77,8 @@
             </select>
         </div>
     </div>
+
+
 
     <button type="submit" class="btn btn-primary" style="justify-content: center; margin-left: 150px" >Create</button>
 </form>

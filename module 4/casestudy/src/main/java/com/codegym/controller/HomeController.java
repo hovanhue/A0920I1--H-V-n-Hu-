@@ -6,7 +6,6 @@ import com.codegym.model.User;
 import com.codegym.service.RoleService;
 import com.codegym.service.UserService;
 import com.codegym.util.EncrypPasswordUtils;
-import com.codegym.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -14,11 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -42,26 +39,41 @@ public class HomeController {
         return "home/login";
     }
 
+    @GetMapping("/admin")
+    public String getHomeAdmin(){
+        return "home/admin";
+    }
+
+//    @GetMapping("/user")
+
     @GetMapping("/")
-    public String loginSuccess(){
+    public String getHome(){
         return "home/index";
     }
 
     @GetMapping("/register")
-    public String showRegister(@Validated @ModelAttribute("registerUser") UserDto registerUser, BindingResult bindingResult){
-        if (bindingResult.hasErrors()) {
+    public ModelAndView getRegisterPage(){
+        return new ModelAndView("home/register","registerUser",new UserDto());
+    }
+
+    @PostMapping("/register")
+    public String registerUser(@Validated @ModelAttribute("registerUser") UserDto registerUser, BindingResult bindingResult){
+        if (bindingResult.hasErrors()){
             return "home/register";
-        }else{
+        }else {
             User user = new User();
-            user.setUsername(registerUser.getEmail());
+            user.setUsername(registerUser.getUsername());
             user.setPassword(EncrypPasswordUtils.EncrypPasswordUtils(registerUser.getPassword()));
-            Role role = new Role("ROLE_USER");
-            Set<Role> listRole = new HashSet<>();
-            listRole.add(role);
+            user.setRememberToken(EncrypPasswordUtils.EncrypPasswordUtils(registerUser.getPassword()));
+            Role roleEntity = roleService.findByName("ROLE_MEMBER");
+            Set<Role> listRoles = new HashSet<>();
+            listRoles.add(roleEntity);
+            user.setRoles(listRoles);
             userService.save(user);
             return "redirect:/login";
         }
     }
+
 
     @RequestMapping(value = "/403", method = RequestMethod.GET)
     public String accessDenied(Model model, Principal principal) {

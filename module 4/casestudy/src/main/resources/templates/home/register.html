@@ -13,8 +13,8 @@
         <form th:action="@{/register}" method="post" th:object="${registerUser}">
             <div class="form-group">
                 <label for="username">Username<i class="text-danger">*</i> :</label>
-                <input th:field="*{email}" name="email" id="username" class="form-control" placeholder="Nhập email" type="text">
-                <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></p>
+                <input th:field="*{username}" name="username" id="username" class="form-control" placeholder="Nhập username" type="text">
+                <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" class="text-danger"></p>
             </div> <!-- form-group// -->
             <div class="form-group">
                 <label for="password">Password<i class="text-danger">*</i> :</label>

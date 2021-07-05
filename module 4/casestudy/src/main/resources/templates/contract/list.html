@@ -2,17 +2,17 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{layout/header::header}">
     <meta charset="UTF-8">
-    <title>List All Service</title>
+    <title>List All Contract</title>
 </head>
 <body>
 <nav th:replace="~{layout/navbar::navbar}"></nav>
 <center>
-    <h3><b>LIST ALL SERVICE</b></h3>
+    <h3><b>LIST ALL CONTRACT</b></h3>
 </center>
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" id="btnModalCreate">Create</button>
 
-<form th:action="@{/service/search}" method="get" class="form-group row">
+<form th:action="@{/contract/search}" method="get" class="form-group row">
     <label class="col-sm-1 col-form-label">Search: </label>
     <div class="col-sm-5">
         <input type="text" class="form-control" id="inputSearch" name="search" placeholder="search by name">
@@ -71,7 +71,7 @@
         <li class="page-item"><a class="page-link" th:href="@{/contract(page = 0, search = ${stringAfterCheck})}">Prevous</a></li>
         <th:block th:each="i: ${#numbers.sequence(0, contractList.totalPages - 1)}">
             <li class="page-item">
-                <a class="page-link" th:href="@{/contract(page=${i},searchN=${stringAfterCheck})}" th:text="${i + 1}"></a>
+                <a class="page-link" th:href="@{/contract(page=${i},search=${stringAfterCheck})}" th:text="${i + 1}"></a>
             </li>
         </th:block>
         <li class="page-item"><a class="page-link" th:href="@{/contract(page = ${contractList.totalPages - 1}, search = ${stringAfterCheck})}">Next</a></li>
@@ -161,10 +161,10 @@
         })
     });
     function showDetails(id){
-        console.log("hele");
+        console.log("show details");
         $.ajax({
             type: "GET",
-            url: "contract/details/"+id,
+            url: "/contract/details/"+id,
             dataType: "HTML",
             success: function (data){
                 $(".modal-body4").html(data);

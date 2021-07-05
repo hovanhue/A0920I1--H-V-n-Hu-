@@ -58,18 +58,14 @@ public class Employee {
     private Division division;
 
     @ManyToOne
-    @JoinColumn(name = "username")
+    @JoinColumn(name = "user_id")
     private User user;
 
     public Employee(){
     }
 
-    public int getEmployee_id() {
+    public Integer getEmployee_id() {
         return employee_id;
-    }
-
-    public void setEmployee_id(int employee_id) {
-        this.employee_id = employee_id;
     }
 
     public String getEmployee_name() {

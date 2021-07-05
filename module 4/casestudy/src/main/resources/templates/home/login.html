@@ -19,7 +19,7 @@
         <form th:action="@{/login}" method="post">
             <p th:if="${param.error}" class="text-danger" style="text-align: center">Đăng nhập thất bại</p>
             <div class="form-group">
-                <input name="email" class="form-control" placeholder="Nhập email" type="text">
+                <input name="username" class="form-control" placeholder="Nhập username" type="text">
             </div> <!-- form-group// -->
             <div class="form-group">
                 <input class="form-control" name="password" placeholder="Nhập password" type="password">

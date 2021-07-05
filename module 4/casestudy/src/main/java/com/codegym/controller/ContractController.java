@@ -77,7 +77,7 @@ public class ContractController {
     }
 
     @GetMapping("/create")
-    public ModelAndView createContract(){
+    public ModelAndView createContract(Model model){
         return new ModelAndView("contract/create", "contracts", new Contract());
     }
 
@@ -101,6 +101,7 @@ public class ContractController {
     @PostMapping("/edit")
     public String editSuccess(@ModelAttribute Contract contract){
         contractService.save(contract);
+        System.out.println("succes");
         return "redirect:/contract/list";
     }
 
@@ -121,7 +122,13 @@ public class ContractController {
     @GetMapping("/details/{id}")
     public ModelAndView viewContractDetails(@PathVariable(value = "id") int id){
         ContractDetails contractDetails = contractDetailService.findContractDetailsById(id);
-        return new ModelAndView("contract/details", "view", contractDetails);
+        return new ModelAndView("contract/details", "contractDetails", contractDetails);
+    }
+
+    @PostMapping("/details")
+    public String saveContractDetails(@Validated @ModelAttribute ContractDetails contractDetails){
+        contractDetailService.save(contractDetails);
+        return "redirect:/contract/list";
     }
 
 }
