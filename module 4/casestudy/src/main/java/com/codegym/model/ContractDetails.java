@@ -11,16 +11,16 @@ public class ContractDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer contract_details_id;
+    private Integer contractDetailsId;
 
     @ManyToOne
     @JoinColumn(name = "contract_id" )
-    private Contract contract_id;
+    private Contract contractId;
 
 
     @ManyToOne
     @JoinColumn(name = "attach_service_id")
-    private AttachService attachService;
+    private AttachService attachServiceId;
 
     @NumberFormat
     @NotEmpty
@@ -29,35 +29,28 @@ public class ContractDetails {
     public ContractDetails() {
     }
 
-    public ContractDetails(int contract_details_id, Contract contract, AttachService attachService, @NotEmpty int quality) {
-        this.contract_details_id = contract_details_id;
-        this.contract_id = contract;
-        this.attachService = attachService;
-        this.quality = quality;
+    public Integer getContractDetailsId() {
+        return contractDetailsId;
     }
 
-    public int getContract_details_id() {
-        return contract_details_id;
+    public void setContractDetailsId(Integer contractDetailsId) {
+        this.contractDetailsId = contractDetailsId;
     }
 
-    public void setContract_details_id(int contract_details_id) {
-        this.contract_details_id = contract_details_id;
+    public Contract getContractId() {
+        return contractId;
     }
 
-    public Contract getContract() {
-        return contract_id;
+    public void setContractId(Contract contractId) {
+        this.contractId = contractId;
     }
 
-    public void setContract(Contract contract) {
-        this.contract_id = contract;
+    public AttachService getAttachServiceId() {
+        return attachServiceId;
     }
 
-    public AttachService getAttachService() {
-        return attachService;
-    }
-
-    public void setAttachService(AttachService attachService) {
-        this.attachService = attachService;
+    public void setAttachServiceId(AttachService attachServiceId) {
+        this.attachServiceId = attachServiceId;
     }
 
     public int getQuality() {

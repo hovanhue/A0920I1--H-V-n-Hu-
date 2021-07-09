@@ -1,5 +1,6 @@
 package com.codegym.controller;
 
+import com.codegym.dto.EmployeeDto;
 import com.codegym.model.*;
 import com.codegym.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,21 +84,20 @@ public class EmployeeController {
         return new ModelAndView("employee/create", "employees", new Employee());
     }
 
-    @PostMapping(value = "/create", produces = {MediaType.APPLICATION_JSON_VALUE})
-    @ResponseBody
-    public String createSuccess(Model model, @Validated @ModelAttribute Employee employee, BindingResult bindingResult,
-    @RequestBody List<Object> json) {
+    @PostMapping(value = "/create" )
+    public String createSuccess(Model model, @ModelAttribute User user, @Validated @ModelAttribute Employee employee, BindingResult bindingResult) {
         if (bindingResult.hasFieldErrors()) {
             model.addAttribute(employee);
-            return "employee/create";
+            return "employee/list";
         }
-        User user = (User) json.get(1);
-        userService.save(user);
+        User user1 = new User(user.getUsername(), user.getPassword(), user.getPassword());
+        userService.save(user1);
 
-//        UserRole userRole = (UserRole)json.get(0);
-//        userRoleService.save(new UserRole(userRole.getUserRoleId(), user.getUsername()));
-        employeeService.saveEmployee(employee);
-        return "redirect:/list";
+        Employee employee1 = new Employee(employee.getEmployeeName(),employee.getEmployeeBirthday(),employee.getEmployeeIdCard()
+                ,employee.getEmployeeSalary(),employee.getEmployeePhone(),employee.getEmployeeEmail(),employee.getEmployeeAddress()
+                ,employee.getPositionId(),employee.getEducationDegree(),employee.getDivisionId(), employee.getUserId());
+        employeeService.saveEmployee(employee1);
+        return "redirect:/employee/list";
     }
 
     @GetMapping("/edit/{id}")

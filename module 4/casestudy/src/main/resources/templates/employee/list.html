@@ -42,25 +42,25 @@
     <tbody>
     <tr th:each="employee:${employeeList}">
 
-        <td scope="row" th:text="${employee.employee_id}"></td>
-        <td th:text="${employee.employee_name}"></td>
-        <td th:text="${employee.employee_birthday}"></td>
-        <td th:text="${employee.employee_id_card}"></td>
-        <td th:text="${employee.employee_salary}"></td>
-        <td th:text="${employee.employee_phone}"></td>
-        <td th:text="${employee.employee_email}"></td>
-        <td th:text="${employee.employee_address}"></td>
-        <td th:text="${employee.position.position_name}"></td>
-        <td th:text="${employee.education_degree.education_degree_name}"></td>
-        <td th:text="${employee.division.division_name}"></td>
-        <td th:text="${employee.user.username}"></td>
+        <td scope="row" th:text="${employee.employeeId}"></td>
+        <td th:text="${employee.employeeName}"></td>
+        <td th:text="${employee.employeeBirthday}"></td>
+        <td th:text="${employee.employeeIdCard}"></td>
+        <td th:text="${employee.employeeSalary}"></td>
+        <td th:text="${employee.employeePhone}"></td>
+        <td th:text="${employee.employeeEmail}"></td>
+        <td th:text="${employee.employeeAddress}"></td>
+        <td th:text="${employee.positionId.positionName}"></td>
+        <td th:text="${employee.educationDegree.educationDegreeName}"></td>
+        <td th:text="${employee.divisionId.divisionName}"></td>
+        <td th:text="${employee.userId.username}"></td>
         <td>
             <button type="button" class="btn btn-success" id="btnModalEdit"
-                    th:onclick="'javascript:showEdit(\''+ ${employee.employee_id}+ '\');'">
+                    th:onclick="'javascript:showEdit(\''+ ${employee.employeeId}+ '\');'">
                 Edit
             </button>
             <button type="button" class="btn btn-danger" id="btnModalDelete"
-                    th:onclick="'javascript:showDelete(\''+ ${employee.employee_id} + '\');'">
+                    th:onclick="'javascript:showDelete(\''+ ${employee.employeeId} + '\');'">
                 Delete
             </button>
         </td>
@@ -154,25 +154,25 @@
     </thead>
     <tbody>
     <tr th:each="employee:${employeeList}">
-        <td scope="row" th:text="${employee.employee_id}"></td>
-        <td th:text="${employee.employee_name}"></td>
-        <td th:text="${employee.employee_birthday}"></td>
-        <td th:text="${employee.employee_id_card}"></td>
-        <td th:text="${employee.employee_salary}"></td>
-        <td th:text="${employee.employee_phone}"></td>
-        <td th:text="${employee.employee_email}"></td>
-        <td th:text="${employee.employee_address}"></td>
-        <td th:text="${employee.position.position_name}"></td>
-        <td th:text="${employee.education_degree.education_degree_name}"></td>
-        <td th:text="${employee.division.division_name}"></td>
-        <td th:text="${employee.user.username}"></td>
+        <td scope="row" th:text="${employee.employeeId}"></td>
+        <td th:text="${employee.employeeName}"></td>
+        <td th:text="${employee.employeeBirthday}"></td>
+        <td th:text="${employee.employeeIdCard}"></td>
+        <td th:text="${employee.employeeSalary}"></td>
+        <td th:text="${employee.employeePhone}"></td>
+        <td th:text="${employee.employeeEmail}"></td>
+        <td th:text="${employee.employeeAddress}"></td>
+        <td th:text="${employee.positionId.positionName}"></td>
+        <td th:text="${employee.educationDegree.educationDegreeName}"></td>
+        <td th:text="${employee.divisionId.divisionName}"></td>
+        <td th:text="${employee.userId.username}"></td>
         <td>
             <button type="button" class="btn btn-success" id="btnModalEdit2"
-                    th:onclick="'javascript:showEdit(\''+ ${employee.employee_id}+ '\');'">
+                    th:onclick="'javascript:showEdit(\''+ ${employee.employeeId}+ '\');'">
                 Edit
             </button>
             <button type="button" class="btn btn-danger" id="btnModalDelete2"
-                    th:onclick="'javascript:showDelete(\''+ ${employee.employee_id} + '\');'">
+                    th:onclick="'javascript:showDelete(\''+ ${employee.employeeId} + '\');'">
                 Delete
             </button>
         </td>
@@ -186,23 +186,10 @@
 <script>
     $("#btnModalCreate").click(function () {
 
-        var userRole = {
-            "role_id": $("#inputUserRole").val(),
-            "username":$("#inputUsername").val(),
-        };
-
-        console.log(userRole);
-
-        var user = {
-            "username":$("#inputUsername").val(),
-            "password":$("#inputPassword").val()
-        };
-        console.log(user);
-
         $.ajax({
             type: "GET",
-            url: "/employee/create",
-            dataType: "HTML",
+            dataType:"HTML",
+            url : "/employee/create",
             success: function (data) {
                 $(".modal-body").html(data);
                 $("#modelId").modal('show');
@@ -243,8 +230,9 @@
                 dataType: "HTML",
                 success: function (data) {
                     $("#searchTable").table('hide');
-                    $("#searchTable2").table('show');
+
                     $("#searchTable2").html(data);
+                    $("#searchTable2").table('show');
                 }
             })
         })
@@ -265,5 +253,7 @@
         })
     }
 </script>
+
 </body>
+
 </html>

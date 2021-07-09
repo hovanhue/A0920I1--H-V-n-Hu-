@@ -9,10 +9,11 @@ import java.util.Set;
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer role_id;
+    @Column(name = "role_id")
+    private Integer roleId;
 
     @NotEmpty
-    private String role_name;
+    private String roleName;
 
     @ManyToMany(mappedBy = "roles", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<User> users;
@@ -20,25 +21,32 @@ public class Role {
     public Role() {
     }
 
-    public Role(@NotEmpty String role_name) {
-        this.role_name = role_name;
-    }
-
-    public int getRole_id() {
-        return role_id;
-    }
-
-    public void setRole_id(int role_id) {
-        this.role_id = role_id;
-    }
-
-    public String getRole_name() {
-        return role_name;
-    }
-
-    public void setRole_name(String role_name) {
-        this.role_name = role_name;
+    public Role(String roleName) {
+        this.roleName = roleName;
     }
 
 
+    public Integer getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public Set<User> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
 }

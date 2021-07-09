@@ -13,45 +13,40 @@ public class RentType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer rent_type_id;
+    private Integer rentTypeId;
 
     @NotEmpty
     @Size(max = 45)
-    private String rent_type_name;
+    private String rentTypeName;
 
     @NotEmpty
     @NumberFormat
-    private String rent_type_cost;
+    private String rentTypeCost;
 
     public RentType() {
     }
 
-
-    public int getRent_type_id() {
-        return rent_type_id;
+    public Integer getRentTypeId() {
+        return rentTypeId;
     }
 
-    public void setRent_type_id(int rent_type_id) {
-        this.rent_type_id = rent_type_id;
+    public void setRentTypeId(Integer rentTypeId) {
+        this.rentTypeId = rentTypeId;
     }
 
-    public String getRent_type_name() {
-        return rent_type_name;
+    public String getRentTypeName() {
+        return rentTypeName;
     }
 
-    public void setRent_type_name(String rent_type_name) {
-        this.rent_type_name = rent_type_name;
+    public void setRentTypeName(String rentTypeName) {
+        this.rentTypeName = rentTypeName;
     }
 
-    public void setRent_type_id(Integer rent_type_id) {
-        this.rent_type_id = rent_type_id;
+    public String getRentTypeCost() {
+        return rentTypeCost;
     }
 
-    public String getRent_type_cost() {
-        return rent_type_cost;
-    }
-
-    public void setRent_type_cost(String rent_type_cost) {
-        this.rent_type_cost = rent_type_cost;
+    public void setRentTypeCost(String rentTypeCost) {
+        this.rentTypeCost = rentTypeCost;
     }
 }

@@ -11,71 +11,64 @@ import javax.validation.constraints.Size;
 public class AttachService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer attach_service_id;
+    private Integer attachServiceId;
 
     @NotEmpty
     @Size(max = 45)
-    private String attach_service_name;
+    private String attachServiceName;
 
     @NotEmpty
     @NumberFormat
-    private String attach_service_cost;
+    private String attachServiceCost;
 
     @NotEmpty
     @NumberFormat
-    private int attach_service_unit;
+    private int attachServiceUnit;
 
     @NotEmpty
     @Size(max = 45)
-    private String attach_service_status;
+    private String attachServiceStatus;
 
     public AttachService() {
     }
 
-
-
-    public int getAttach_service_id() {
-        return attach_service_id;
+    public Integer getAttachServiceId() {
+        return attachServiceId;
     }
 
-    public void setAttach_service_id(int attach_service_id) {
-        this.attach_service_id = attach_service_id;
+    public void setAttachServiceId(Integer attachServiceId) {
+        this.attachServiceId = attachServiceId;
     }
 
-    public String getAttach_service_name() {
-        return attach_service_name;
+    public String getAttachServiceName() {
+        return attachServiceName;
     }
 
-    public void setAttach_service_name(String attach_service_name) {
-        this.attach_service_name = attach_service_name;
+    public void setAttachServiceName(String attachServiceName) {
+        this.attachServiceName = attachServiceName;
     }
 
-    public void setAttach_service_id(Integer attach_service_id) {
-        this.attach_service_id = attach_service_id;
+    public String getAttachServiceCost() {
+        return attachServiceCost;
     }
 
-    public String getAttach_service_cost() {
-        return attach_service_cost;
+    public void setAttachServiceCost(String attachServiceCost) {
+        this.attachServiceCost = attachServiceCost;
     }
 
-    public void setAttach_service_cost(String attach_service_cost) {
-        this.attach_service_cost = attach_service_cost;
+    public int getAttachServiceUnit() {
+        return attachServiceUnit;
     }
 
-    public int getAttach_service_unit() {
-        return attach_service_unit;
+    public void setAttachServiceUnit(int attachServiceUnit) {
+        this.attachServiceUnit = attachServiceUnit;
     }
 
-    public void setAttach_service_unit(int attach_service_unit) {
-        this.attach_service_unit = attach_service_unit;
+    public String getAttachServiceStatus() {
+        return attachServiceStatus;
     }
 
-    public String getAttach_service_status() {
-        return attach_service_status;
+    public void setAttachServiceStatus(String attachServiceStatus) {
+        this.attachServiceStatus = attachServiceStatus;
     }
-
-    public void setAttach_service_status(String attach_service_status) {
-        this.attach_service_status = attach_service_status;
-    }
-
 }

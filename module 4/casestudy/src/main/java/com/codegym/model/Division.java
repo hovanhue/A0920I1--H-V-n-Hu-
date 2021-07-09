@@ -9,34 +9,27 @@ import java.util.List;
 public class Division {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer division_id;
+    private Integer divisionId;
 
     @NotEmpty @Size(max = 45)
-    private String division_name;
+    private String divisionName;
 
     public Division() {
     }
 
-    public Division(@NotEmpty int division_id, @NotEmpty @Size(max = 45) String division_name) {
-        this.division_id = division_id;
-        this.division_name = division_name;
-
+    public Integer getDivisionId() {
+        return divisionId;
     }
 
-    public int getDivision_id() {
-        return division_id;
+    public void setDivisionId(Integer divisionId) {
+        this.divisionId = divisionId;
     }
 
-    public void setDivision_id(int division_id) {
-        this.division_id = division_id;
+    public String getDivisionName() {
+        return divisionName;
     }
 
-    public String getDivision_name() {
-        return division_name;
+    public void setDivisionName(String divisionName) {
+        this.divisionName = divisionName;
     }
-
-    public void setDivision_name(String division_name) {
-        this.division_name = division_name;
-    }
-
 }

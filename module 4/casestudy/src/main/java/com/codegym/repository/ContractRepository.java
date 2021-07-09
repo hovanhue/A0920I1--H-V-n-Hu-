@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ContractRepository extends JpaRepository<Contract, Integer> {
 
-    @Query("select u from Contract u where u.customer_id.customer_name = ?1")
+    @Query("select u from Contract u where u.customerId.customerName = ?1")
     Page<Contract> findContractByNameCustomer(String name, Pageable pageable);
 }

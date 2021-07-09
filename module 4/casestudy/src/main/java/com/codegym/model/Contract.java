@@ -14,104 +14,103 @@ public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @NumberFormat
-    private Integer contract_id;
+    private Integer contractId;
 
     @NotEmpty
     @Size(max = 45)
     @DateTimeFormat
-    private String contract_start_date;
+    private String contractStartDate;
 
     @NotEmpty
     @Size(max = 45)
     @DateTimeFormat
-    private String contract_end_date;
+    private String contractEndDate;
 
     @NotEmpty
     @NumberFormat
-    private String contract_deposit;
+    private String contractDeposit;
 
     @NotEmpty
     @NumberFormat
-    private String contract_total_money;
+    private String contractTotalMoney;
 
     @ManyToOne
     @JoinColumn(name = "employee_id")
-    private Employee employee;
+    private Employee employeeId;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    private Customer customer_id;
+    private Customer customerId;
 
     @ManyToOne
     @JoinColumn(name = "service_id")
-    private Service service_id;
+    private Service serviceId;
 
     public Contract() {
     }
 
-    public Integer getContract_id() {
-        return contract_id;
+
+    public Integer getContractId() {
+        return contractId;
     }
 
-
-    public String getContract_start_date() {
-        return contract_start_date;
+    public void setContractId(Integer contractId) {
+        this.contractId = contractId;
     }
 
-    public void setContract_start_date(String contract_start_date) {
-        this.contract_start_date = contract_start_date;
+    public String getContractStartDate() {
+        return contractStartDate;
     }
 
-    public String getContract_end_date() {
-        return contract_end_date;
+    public void setContractStartDate(String contractStartDate) {
+        this.contractStartDate = contractStartDate;
     }
 
-    public void setContract_end_date(String contract_end_date) {
-        this.contract_end_date = contract_end_date;
+    public String getContractEndDate() {
+        return contractEndDate;
     }
 
-    public void setContract_id(Integer contract_id) {
-        this.contract_id = contract_id;
+    public void setContractEndDate(String contractEndDate) {
+        this.contractEndDate = contractEndDate;
     }
 
-    public String getContract_deposit() {
-        return contract_deposit;
+    public String getContractDeposit() {
+        return contractDeposit;
     }
 
-    public void setContract_deposit(String contract_deposit) {
-        this.contract_deposit = contract_deposit;
+    public void setContractDeposit(String contractDeposit) {
+        this.contractDeposit = contractDeposit;
     }
 
-    public String getContract_total_money() {
-        return contract_total_money;
+    public String getContractTotalMoney() {
+        return contractTotalMoney;
     }
 
-    public void setContract_total_money(String contract_total_money) {
-        this.contract_total_money = contract_total_money;
+    public void setContractTotalMoney(String contractTotalMoney) {
+        this.contractTotalMoney = contractTotalMoney;
     }
 
-    public Employee getEmployee() {
-        return employee;
+    public Employee getEmployeeId() {
+        return employeeId;
     }
 
-    public void setEmployee(Employee employee) {
-        this.employee = employee;
+    public void setEmployeeId(Employee employeeId) {
+        this.employeeId = employeeId;
     }
 
-    public Customer getCustomer_id() {
-        return customer_id;
+    public Customer getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(Customer customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(Customer customerId) {
+        this.customerId = customerId;
     }
 
-    public Service getService_id() {
-        return service_id;
+    public Service getServiceId() {
+        return serviceId;
     }
 
-    public void setService_id(Service service_id) {
-        this.service_id = service_id;
+    public void setServiceId(Service serviceId) {
+        this.serviceId = serviceId;
     }
-
 }

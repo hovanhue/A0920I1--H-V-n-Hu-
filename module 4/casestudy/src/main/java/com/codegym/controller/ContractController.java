@@ -101,7 +101,7 @@ public class ContractController {
     @PostMapping("/edit")
     public String editSuccess(@ModelAttribute Contract contract){
         contractService.save(contract);
-        System.out.println("succes");
+        System.out.println("success");
         return "redirect:/contract/list";
     }
 
@@ -122,11 +122,19 @@ public class ContractController {
     @GetMapping("/details/{id}")
     public ModelAndView viewContractDetails(@PathVariable(value = "id") int id){
         ContractDetails contractDetails = contractDetailService.findContractDetailsById(id);
+        System.out.println("show details");
         return new ModelAndView("contract/details", "contractDetails", contractDetails);
     }
 
-    @PostMapping("/details")
-    public String saveContractDetails(@Validated @ModelAttribute ContractDetails contractDetails){
+    @GetMapping("/saveDetails/{id}")
+    public ModelAndView showEditContractDetails(@PathVariable(value = "id") int id){
+        ContractDetails contractDetails = contractDetailService.findContractDetailsById(id);
+        System.out.println("show1 details");
+        return new ModelAndView("contract/saveDetails", "contractDetails", contractDetails);
+    }
+
+    @PostMapping("/saveDetails")
+    public String saveContractDetails(@ModelAttribute ContractDetails contractDetails){
         contractDetailService.save(contractDetails);
         return "redirect:/contract/list";
     }

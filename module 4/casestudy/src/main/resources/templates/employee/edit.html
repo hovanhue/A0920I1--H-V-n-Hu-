@@ -6,82 +6,82 @@
 </head>
 <body>
 <form th:action="@{employee/edit}" method="post" th:object="${employee}">
-    <input type="hidden" th:field="*{employee_id}">
+    <input type="hidden" th:field="*{employeeId}">
     <div class="form-group row">
-        <label for="employee_name" class="col-sm-2 col-form-label">Full Name</label>
+        <label for="employeeName" class="col-sm-2 col-form-label">Full Name</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="employee_name" th:field="*{employee_name}">
+            <input type="text" class="form-control" id="employeeName" th:field="*{employeeName}">
         </div>
         <th:block>
-            <span style="color: red" th:if="${#fields.hasErrors('employee_name')}" th:errors="*{employee_name}">Name Error</span>
+            <span style="color: red" th:if="${#fields.hasErrors('employeeName')}" th:errors="*{employeeName}">Name Error</span>
         </th:block>
     </div>
 
     <div class="form-group row">
-        <label for="employee_birthday" class="col-sm-2 col-form-label">Birthday</label>
+        <label for="employeeBirthday" class="col-sm-2 col-form-label">Birthday</label>
         <div class="col-sm-8">
-            <input type="date" class="form-control" id="employee_birthday" th:field="*{employee_birthday}">
+            <input type="date" class="form-control" id="employeeBirthday" th:field="*{employeeBirthday}">
         </div>
         <th:block>
-            <span style="color: red" th:if="${#fields.hasErrors('employee_birthday')}" th:errors="*{employee_birthday}">Name Error</span>
+            <span style="color: red" th:if="${#fields.hasErrors('employeeBirthday')}" th:errors="*{employeeBirthday}">Name Error</span>
         </th:block>
     </div>
 
     <div class="form-group row">
-        <label for="employee_id_card" class="col-sm-2 col-form-label">ID Card</label>
+        <label for="employeeIdCard" class="col-sm-2 col-form-label">ID Card</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="employee_id_card" th:field="*{employee_id_card}">
+            <input type="text" class="form-control" id="employeeIdCard" th:field="*{employeeIdCard}">
         </div>
         <th:block>
-            <span style="color: red" th:if="${#fields.hasErrors('employee_id_card')}" th:errors="*{employee_id_card}">Name Error</span>
+            <span style="color: red" th:if="${#fields.hasErrors('employeeIdCard')}" th:errors="*{employeeIdCard}">Name Error</span>
         </th:block>
     </div>
 
     <div class="form-group row">
-        <label for="employee_salary" class="col-sm-2 col-form-label">Salary</label>
+        <label for="employeeSalary" class="col-sm-2 col-form-label">Salary</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="employee_salary" th:field="*{employee_salary}">
+            <input type="text" class="form-control" id="employeeSalary" th:field="*{employeeSalary}">
         </div>
         <th:block>
-            <span style="color: red" th:if="${#fields.hasErrors('employee_salary')}" th:errors="*{employee_salary}">Name Error</span>
+            <span style="color: red" th:if="${#fields.hasErrors('employeeSalary')}" th:errors="*{employeeSalary}">Name Error</span>
         </th:block>
     </div>
 
     <div class="form-group row">
-        <label for="employee_phone" class="col-sm-2 col-form-label">Phone Number</label>
+        <label for="employeePhone" class="col-sm-2 col-form-label">Phone Number</label>
         <div class="col-sm-8">
-            <input type="text" class="form-control" id="employee_phone" th:field="*{employee_phone}">
+            <input type="text" class="form-control" id="employeePhone" th:field="*{employeePhone}">
         </div>
         <th:block>
-            <span style="color: red" th:if="${#fields.hasErrors('employee_phone')}" th:errors="*{employee_phone}">Name Error</span>
+            <span style="color: red" th:if="${#fields.hasErrors('employeePhone')}" th:errors="*{employeePhone}">Name Error</span>
         </th:block>
     </div>
 
     <div class="form-group row">
-        <label for="employee_email" class="col-sm-2 col-form-label">Email</label>
+        <label for="employeeEmail" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-8">
-            <input  type="text" class="form-control" id="employee_email" th:field="*{employee_email}">
+            <input  type="text" class="form-control" id="employeeEmail" th:field="*{employeeEmail}">
         </div>
         <th:block>
-            <span style="color: red" th:if="${#fields.hasErrors('employee_email')}" th:errors="*{employee_email}">Name Error</span>
+            <span style="color: red" th:if="${#fields.hasErrors('employeeEmail')}" th:errors="*{employeeEmail}">Name Error</span>
         </th:block>
     </div>
 
     <div class="form-group row">
-        <label for="employee_address" class="col-sm-2 col-form-label">Address</label>
+        <label for="employeeAddress" class="col-sm-2 col-form-label">Address</label>
         <div class="col-sm-8">
-            <input  type="text" class="form-control" id="employee_address" th:field="*{employee_address}">
+            <input  type="text" class="form-control" id="employeeAddress" th:field="*{employeeAddress}">
         </div>
         <th:block>
-            <span style="color: red" th:if="${#fields.hasErrors('employee_address')}" th:errors="*{employee_address}">Name Error</span>
+            <span style="color: red" th:if="${#fields.hasErrors('employeeAddress')}" th:errors="*{employeeAddress}">Name Error</span>
         </th:block>
     </div>
 
     <div class="form-group row">
         <label for="position" class="col-sm-2 col-form-label">Position</label>
         <div class="col-sm-6 col-md-3 col-lg-2">
-            <select class="form-control" id="position" th:field="*{position}">
-                <option th:each="p:${positions}" th:value="${p.position_id}" th:text="${p.position_name}" value=""></option>
+            <select class="form-control" id="position" th:field="*{positionId}">
+                <option th:each="p:${positions}" th:value="${p.positionId}" th:text="${p.positionName}" value=""></option>
             </select>
         </div>
     </div>
@@ -89,8 +89,8 @@
     <div class="form-group row">
         <label for="education_degree" class="col-sm-2 col-form-label">Education Degree</label>
         <div class="col-sm-6 col-md-3 col-lg-2">
-            <select class="form-control" id="education_degree" th:field="*{education_degree}">
-                <option th:each="e:${educationDegrees}" th:value="${e.education_degree_id}" th:text="${e.education_degree_name}" value=""></option>
+            <select class="form-control" id="education_degree" th:field="*{educationDegree}">
+                <option th:each="e:${educationDegrees}" th:value="${e.educationDegreeId}" th:text="${e.educationDegreeName}" value=""></option>
             </select>
         </div>
     </div>
@@ -98,8 +98,8 @@
     <div class="form-group row">
         <label for="division" class="col-sm-2 col-form-label">Division</label>
         <div class="col-sm-6 col-md-3 col-lg-2">
-            <select class="form-control" id="division" th:field="*{division}">
-                <option th:each="d:${divisions}" th:value="${d.division_id}" th:text="${d.division_name}" value=""></option>
+            <select class="form-control" id="division" th:field="*{divisionId}">
+                <option th:each="d:${divisions}" th:value="${d.divisionId}" th:text="${d.divisionName}" value=""></option>
             </select>
         </div>
     </div>
@@ -107,7 +107,7 @@
     <div class="form-group row">
         <label for="inputUsername">Username</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="inputUsername" th:field="*{user.username}"/>
+            <input type="text" class="form-control" id="inputUsername" th:field="*{userId.username}"/>
         </div>
     </div>
 

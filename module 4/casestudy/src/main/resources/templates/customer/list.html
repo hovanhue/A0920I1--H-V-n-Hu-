@@ -39,63 +39,22 @@
     </thead>
     <tbody>
     <tr th:each="customer:${customerList}">
-        <td scope="row" th:text="${customer.customer_id}"></td>
-        <td th:text="${customer.customerType.customer_type_name}"></td>
-        <td th:text="${customer.customer_name}"></td>
-        <td th:text="${customer.customer_birthday}"></td>
-        <td th:text="${customer.customer_gender}"></td>
-        <td th:text="${customer.customer_id_card}"></td>
-        <td th:text="${customer.customer_phone}"></td>
-        <td th:text="${customer.customer_email}"></td>
-        <td th:text="${customer.customer_address}"></td>
+        <td scope="row" th:text="${customer.customerId}"></td>
+        <td th:text="${customer.customerType.customerTypeName}"></td>
+        <td th:text="${customer.customerName}"></td>
+        <td th:text="${customer.customerBirthday}"></td>
+        <td th:text="${customer.customerGender}"></td>
+        <td th:text="${customer.customerIdCard}"></td>
+        <td th:text="${customer.customerPhone}"></td>
+        <td th:text="${customer.customerEmail}"></td>
+        <td th:text="${customer.customerAddress}"></td>
         <td>
             <button type="button" class="btn btn-success" id="btnModalEdit"
-                    th:onclick="'javascrip:showEdit(\''+${customer.customer_id}+'\')'">
+                    th:onclick="'javascrip:showEdit(\''+${customer.customerId}+'\')'">
                 Edit
             </button>
             <button type="button" class="btn btn-danger" id="btnModalDelete"
-                    th:onclick="'javascript:showDelete(\''+ ${customer.customer_id} + '\');'">
-                Delete
-            </button>
-        </td>
-    </tr>
-    </tbody>
-</table>
-
-
-<table th:hidden="hidden" class="table table-bordered table-striped table-hover" id="searchTable2">
-    <thead class="thead-inverse">
-    <tr>
-        <th>Id</th>
-        <th>Customer Type</th>
-        <th>Name</th>
-        <th>Birthday</th>
-        <th>Gender</th>
-        <th>ID Card</th>
-        <th>Phone Number</th>
-        <th>Email</th>
-        <th>Address</th>
-        <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="customer:${customerList}">
-        <td scope="row" th:text="${customer.customer_id}"></td>
-        <td th:text="${customer.customerType.customer_type_name}"></td>
-        <td th:text="${customer.customer_name}"></td>
-        <td th:text="${customer.customer_birthday}"></td>
-        <td th:text="${customer.customer_gender}"></td>
-        <td th:text="${customer.customer_id_card}"></td>
-        <td th:text="${customer.customer_phone}"></td>
-        <td th:text="${customer.customer_email}"></td>
-        <td th:text="${customer.customer_address}"></td>
-        <td>
-            <button type="button" class="btn btn-success" id="btnModalEdit2"
-                    th:onclick="'javascrip:showEdit(\''+${customer.customer_id}+'\')'">
-                Edit
-            </button>
-            <button type="button" class="btn btn-danger" id="btnModalDelete2"
-                    th:onclick="'javascript:showDelete(\''+ ${customer.customer_id} + '\');'">
+                    th:onclick="'javascript:showDelete(\''+ ${customer.customerId} + '\');'">
                 Delete
             </button>
         </td>

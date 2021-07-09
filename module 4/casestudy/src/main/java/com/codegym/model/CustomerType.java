@@ -12,33 +12,28 @@ public class CustomerType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer customer_type_id;
+    private Integer customerTypeId;
 
     @NotEmpty
     @Size(max = 45)
-    private String customer_type_name;
+    private String customerTypeName;
 
     public CustomerType() {
     }
 
-    public CustomerType(int customer_type_id, @NotEmpty @Size(max = 45) String customer_type_name) {
-        this.customer_type_id = customer_type_id;
-        this.customer_type_name = customer_type_name;
+    public Integer getCustomerTypeId() {
+        return customerTypeId;
     }
 
-    public int getCustomer_type_id() {
-        return customer_type_id;
+    public void setCustomerTypeId(Integer customerTypeId) {
+        this.customerTypeId = customerTypeId;
     }
 
-    public void setCustomer_type_id(int customer_type_id) {
-        this.customer_type_id = customer_type_id;
+    public String getCustomerTypeName() {
+        return customerTypeName;
     }
 
-    public String getCustomer_type_name() {
-        return customer_type_name;
-    }
-
-    public void setCustomer_type_name(String customer_type_name) {
-        this.customer_type_name = customer_type_name;
+    public void setCustomerTypeName(String customerTypeName) {
+        this.customerTypeName = customerTypeName;
     }
 }

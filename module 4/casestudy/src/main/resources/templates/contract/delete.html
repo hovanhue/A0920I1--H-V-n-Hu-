@@ -6,13 +6,13 @@
 </head>
 <body>
 
-<input type="hidden" th:field="${contracts.contract_id}">
+<input type="hidden" th:field="${contracts.contractId}">
 <div>
-    Customer: <p th:text="${contracts.customer_id.customer_name}"></p>
+    Customer: <p th:text="${contracts.customerId.customerName}"></p>
     Do you sure to delete?
 </div>
 <button id="clickDelete" type="button" class="btn btn-danger" style="margin-left: 100px"
-        th:onclick="'javascript:actionDelete(\''+ ${contracts.contract_id} + '\');'">Delete</button>
+        th:onclick="'javascript:actionDelete(\''+ ${contracts.contractId} + '\');'">Delete</button>
 
 </body>
 </html>

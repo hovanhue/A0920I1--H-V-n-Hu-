@@ -21,7 +21,13 @@ public class ContractDetailServiceImpl implements ContractDetailService {
     }
 
     @Override
+    public ContractDetails findContractDetailsByIdContract(int id) {
+        return contractDetailsRepository.findContractDetailsByContractId(id);
+    }
+
+    @Override
     public void save(ContractDetails contractDetails) {
         contractDetailsRepository.save(contractDetails);
     }
+
 }

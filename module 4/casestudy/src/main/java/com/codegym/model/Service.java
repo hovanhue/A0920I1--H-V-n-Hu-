@@ -5,145 +5,143 @@ import org.springframework.format.annotation.NumberFormat;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 @Entity
 public class Service {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer service_id;
+    private Integer serviceId;
 
     @NotEmpty
     @Size(max = 45)
-    private String service_name;
+    private String serviceName;
 
     @NumberFormat
     @NotEmpty
-    private String service_area;
+    private String serviceArea;
 
     @NumberFormat
     @NotEmpty
-    private String service_cost;
+    private String serviceCost;
 
     @NumberFormat
 //    @NotEmpty
-    private int service_max_people;
+    private int serviceMaxPeople;
 
     @ManyToOne
     @JoinColumn(name = "service_type_id")
-    private ServiceType serviceType;
+    private ServiceType serviceTypeId;
 
     @ManyToOne
     @JoinColumn(name = "rent_type_id")
-    private RentType rentType;
+    private RentType rentTypeId;
 
     @NotEmpty
     @Size(max = 45)
-    private String standard_room;
+    private String standardRoom;
 
     @Size(max = 45)
     @NotEmpty
-    private String description_other_convenience;
+    private String descriptionOtherConvenience;
 
     @NumberFormat
     @NotEmpty
-    private String pool_area;
+    private String poolArea;
 
     @NumberFormat
 //    @NotEmpty
-    private int number_of_floors;
+    private int numberOfFloors;
 
     public Service() {
     }
 
-    public Integer getService_id() {
-        return service_id;
+
+    public Integer getServiceId() {
+        return serviceId;
     }
 
-    public String getService_name() {
-        return service_name;
+    public void setServiceId(Integer serviceId) {
+        this.serviceId = serviceId;
     }
 
-    public void setService_name(String service_name) {
-        this.service_name = service_name;
+    public String getServiceName() {
+        return serviceName;
     }
 
-    public int getService_max_people() {
-        return service_max_people;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
-    public void setService_max_people(int service_max_people) {
-        this.service_max_people = service_max_people;
+    public String getServiceArea() {
+        return serviceArea;
     }
 
-    public ServiceType getServiceType() {
-        return serviceType;
+    public void setServiceArea(String serviceArea) {
+        this.serviceArea = serviceArea;
     }
 
-    public void setServiceType(ServiceType serviceType) {
-        this.serviceType = serviceType;
+    public String getServiceCost() {
+        return serviceCost;
     }
 
-    public RentType getRentType() {
-        return rentType;
+    public void setServiceCost(String serviceCost) {
+        this.serviceCost = serviceCost;
     }
 
-    public void setRentType(RentType rentType) {
-        this.rentType = rentType;
+    public int getServiceMaxPeople() {
+        return serviceMaxPeople;
     }
 
-    public String getStandard_room() {
-        return standard_room;
+    public void setServiceMaxPeople(int serviceMaxPeople) {
+        this.serviceMaxPeople = serviceMaxPeople;
     }
 
-    public void setStandard_room(String standard_room) {
-        this.standard_room = standard_room;
+    public ServiceType getServiceTypeId() {
+        return serviceTypeId;
     }
 
-    public String getDescription_other_convenience() {
-        return description_other_convenience;
+    public void setServiceTypeId(ServiceType serviceTypeId) {
+        this.serviceTypeId = serviceTypeId;
     }
 
-    public void setDescription_other_convenience(String description_other_convenience) {
-        this.description_other_convenience = description_other_convenience;
+    public RentType getRentTypeId() {
+        return rentTypeId;
     }
 
-    public void setService_id(Integer service_id) {
-        this.service_id = service_id;
+    public void setRentTypeId(RentType rentTypeId) {
+        this.rentTypeId = rentTypeId;
     }
 
-    public String getService_area() {
-        return service_area;
+    public String getStandardRoom() {
+        return standardRoom;
     }
 
-    public void setService_area(String service_area) {
-        this.service_area = service_area;
+    public void setStandardRoom(String standardRoom) {
+        this.standardRoom = standardRoom;
     }
 
-    public String getService_cost() {
-        return service_cost;
+    public String getDescriptionOtherConvenience() {
+        return descriptionOtherConvenience;
     }
 
-    public void setService_cost(String service_cost) {
-        this.service_cost = service_cost;
+    public void setDescriptionOtherConvenience(String descriptionOtherConvenience) {
+        this.descriptionOtherConvenience = descriptionOtherConvenience;
     }
 
-    public String getPool_area() {
-        return pool_area;
+    public String getPoolArea() {
+        return poolArea;
     }
 
-    public void setPool_area(String pool_area) {
-        this.pool_area = pool_area;
+    public void setPoolArea(String poolArea) {
+        this.poolArea = poolArea;
     }
 
-    public int getNumber_of_floors() {
-        return number_of_floors;
+    public int getNumberOfFloors() {
+        return numberOfFloors;
     }
 
-    public void setNumber_of_floors(int number_of_floors) {
-        this.number_of_floors = number_of_floors;
+    public void setNumberOfFloors(int numberOfFloors) {
+        this.numberOfFloors = numberOfFloors;
     }
-
-
 }

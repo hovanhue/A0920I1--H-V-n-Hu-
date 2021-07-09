@@ -43,9 +43,9 @@
     <tr th:each="service:${serviceList}">
         <td scope="row" th:text="${service.service_id}"></td>
         <td th:text="${service.service_name}"></td>
-        <td th:text="${service.service_area}"></td>
-        <td th:text="${service.service_cost}"></td>
-        <td th:text="${service.service_max_people}"></td>
+        <td th:text="${service.serviceArea}"></td>
+        <td th:text="${service.serviceCost}"></td>
+        <td th:text="${service.serviceMaxPeople}"></td>
         <td th:text="${service.serviceType.service_type_name}"></td>
         <td th:text="${service.rentType.rent_type_name}"></td>
         <td th:text="${service.standard_room}"></td>

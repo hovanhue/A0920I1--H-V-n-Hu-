@@ -2,10 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{layout/header::header}">
     <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-<form th:action="@{contract/details}" method="get" th:object="${contractDetails}">
-<!--    <input type="hidden" th:field="*{contract_details_id}">-->
+<form th:action="@{contract/saveDetails}" method="post" th:object="${contractDetails}">
+    <!--    <input type="hidden" th:field="*{contract_details_id}">-->
     <div class="form-group row">
         <label for="attachService" class="col-sm-2 col-form-label">Attach Service</label>
         <div class="col-sm-2">
@@ -24,8 +25,7 @@
             <span th:if="${#fields.hasErrors('quality')}" th:errors="*{quality}">Name Error</span>
         </th:block>
     </div>
-
+    <button type="submit" class="btn btn-primary" style="justify-content: center; margin-left: 150px"> Update</button>
 </form>
-
 </body>
 </html>

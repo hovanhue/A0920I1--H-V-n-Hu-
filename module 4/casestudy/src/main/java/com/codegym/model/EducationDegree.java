@@ -9,33 +9,27 @@ import java.util.List;
 public class EducationDegree {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer education_degree_id;
+    private Integer educationDegreeId;
 
     @NotEmpty
     @Size(max = 45)
-    private String education_degree_name;
+    private String educationDegreeName;
 
 
-    public EducationDegree(@NotEmpty int education_degree_id, @NotEmpty @Size(max = 45) String education_degree_name) {
-        this.education_degree_id = education_degree_id;
-        this.education_degree_name = education_degree_name;
-
+    public Integer getEducationDegreeId() {
+        return educationDegreeId;
     }
 
-    public int getEducation_degree_id() {
-        return education_degree_id;
+    public void setEducationDegreeId(Integer educationDegreeId) {
+        this.educationDegreeId = educationDegreeId;
     }
 
-    public void setEducation_degree_id(int education_degree_id) {
-        this.education_degree_id = education_degree_id;
+    public String getEducationDegreeName() {
+        return educationDegreeName;
     }
 
-    public String getEducation_degree_name() {
-        return education_degree_name;
-    }
-
-    public void setEducation_degree_name(String education_degree_name) {
-        this.education_degree_name = education_degree_name;
+    public void setEducationDegreeName(String educationDegreeName) {
+        this.educationDegreeName = educationDegreeName;
     }
 
     public EducationDegree() {

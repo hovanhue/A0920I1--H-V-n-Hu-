@@ -32,6 +32,12 @@ public class User {
     public User() {
     }
 
+    public User(@NotEmpty String username, @NotEmpty String password, @NotEmpty String rememberToken) {
+        this.username = username;
+        this.password = password;
+        this.rememberToken = rememberToken;
+    }
+
     public Integer getId() {
         return id;
     }

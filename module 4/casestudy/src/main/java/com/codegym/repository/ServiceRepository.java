@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ServiceRepository extends JpaRepository<Service, Integer> {
 
-    @Query("select u from Service u where u.service_name =?1")
+    @Query("select u from Service u where u.serviceName =?1")
     Page<Service> findServiceByService_name(String key, Pageable pageable);
 }

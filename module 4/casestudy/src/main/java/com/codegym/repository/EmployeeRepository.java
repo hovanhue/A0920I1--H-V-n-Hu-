@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
-    @Query("select u from Employee u where u.employee_name = ?1")
+    @Query("select u from Employee u where u.employeeName = ?1")
     Page<Employee> findEmployeeByNameContaining(String name, Pageable pageable);
 }

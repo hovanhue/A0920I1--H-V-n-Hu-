@@ -32,33 +32,40 @@
         <th>Name Employee</th>
         <th>Name Customer</th>
         <th>Service</th>
+        <th>View</th>
         <th>Details</th>
         <th>Action</th>
     </tr>
     </thead>
     <tbody>
     <tr th:each="contract:${contractList}">
-        <td scope="row" th:text="${contract.contract_id}"></td>
-        <td th:text="${contract.contract_start_date}"></td>
-        <td th:text="${contract.contract_end_date}"></td>
-        <td th:text="${contract.contract_deposit}"></td>
-        <td th:text="${contract.contract_total_money}"></td>
-        <td th:text="${contract.employee.employee_name}"></td>
-        <td th:text="${contract.customer_id.customer_name}"></td>
-        <td th:text="${contract.service_id.service_name}"></td>
+        <td scope="row" th:text="${contract.contractId}"></td>
+        <td th:text="${contract.contractStartDate}"></td>
+        <td th:text="${contract.contractEndDate}"></td>
+        <td th:text="${contract.contractDeposit}"></td>
+        <td th:text="${contract.contractTotalMoney}"></td>
+        <td th:text="${contract.employeeId.employeeName}"></td>
+        <td th:text="${contract.customerId.customerName}"></td>
+        <td th:text="${contract.serviceId.serviceName}"></td>
         <td>
             <button type="button" class="btn btn-outline-secondary" id="btnModalDetails"
-                    th:onclick="'javascript:showDetails(\''+ ${contract.contract_id}+ '\');'">
-                Details
+                    th:onclick="'javascript:showDetails(\''+ ${contract.contractId}+ '\');'">
+                View Details
+            </button>
+        </td>
+        <td>
+            <button type="button" class="btn btn-dark" id="btnModalSaveDetails"
+                    th:onclick="'javascript:saveDetails(\''+ ${contract.contractId}+ '\');'">
+                Edit Details
             </button>
         </td>
         <td>
             <button type="button" class="btn btn-success" id="btnModalEdit"
-                    th:onclick="'javascript:showEdit(\''+ ${contract.contract_id}+ '\');'">
+                    th:onclick="'javascript:showEdit(\''+ ${contract.contractId}+ '\');'">
                 Edit
             </button>
             <button type="button" class="btn btn-danger" id="btnModalDelete"
-                    th:onclick="'javascript:showDelete(\''+ ${contract.contract_id} + '\');'">
+                    th:onclick="'javascript:showDelete(\''+ ${contract.contractId} + '\');'">
                 Delete
             </button>
         </td>
@@ -165,6 +172,17 @@
         $.ajax({
             type: "GET",
             url: "/contract/details/"+id,
+            dataType: "HTML",
+            success: function (data){
+                $(".modal-body4").html(data);
+                $("#modelId4").modal('show');
+            }
+        })
+    }
+    function saveDetails(id){
+        $.ajax({
+            type: "GET",
+            url: "/contract/saveDetails/"+id,
             dataType: "HTML",
             success: function (data){
                 $(".modal-body4").html(data);

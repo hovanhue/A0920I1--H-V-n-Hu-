@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface ContractDetailService {
     ContractDetails findContractDetailsById(int id);
+    ContractDetails findContractDetailsByIdContract(int id);
     void save(ContractDetails contractDetails);
 }

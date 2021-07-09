@@ -46,9 +46,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //formlogin
                 .formLogin()
                 //Đường dẫn trả về trang authentication
-//                .loginPage("/login")
-//                .usernameParameter("username")
-//                .passwordParameter("password")
+                .loginPage("/login")
+                .usernameParameter("username")
+                .passwordParameter("password")
                 //Nếu authentication thành công
                 .defaultSuccessUrl("/")
                 //Nếu authentication thất bại
