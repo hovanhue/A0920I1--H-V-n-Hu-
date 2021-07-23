@@ -30,7 +30,7 @@ public class BlogController {
     @PostMapping(value = "/create")
     public String create(@ModelAttribute Blog blog) {
         blogService.save(blog);
-        return "redirect:/blog/";
+        return "redirect:/blog";
     }
 
     @GetMapping(value = "/edit/{id}")
@@ -58,7 +58,7 @@ public class BlogController {
         blogService.delete(id);
         Page<Blog> blogList = blogService.findAll(pageable);
         model.addAttribute("blogList", blogList);
-        return "blogs/search";
+        return "/blog/";
     }
 
     @GetMapping(value = "/search")

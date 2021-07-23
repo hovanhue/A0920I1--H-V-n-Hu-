@@ -16,7 +16,6 @@ public class Product {
     @Size(min = 5, max = 50)
     private String nameProduct;
 
-    @NotEmpty(message = "Giá sản phẩm không được để trống")
     private double priceProduct;
 
     @NotEmpty(message = "Trạng thái sản phẩm không được để trống")

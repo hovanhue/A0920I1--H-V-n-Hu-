@@ -90,9 +90,10 @@ public class EmployeeController {
             model.addAttribute(employee);
             return "employee/list";
         }
-        User user1 = new User(user.getUsername(), user.getPassword(), user.getPassword());
+        User user1 = new User(employee.getUserId().getUsername(), employee.getUserId().getPassword(), employee.getUserId().getPassword());
         userService.save(user1);
 
+        // luu user duoc roi con employee chua luu dc. role_id
         Employee employee1 = new Employee(employee.getEmployeeName(),employee.getEmployeeBirthday(),employee.getEmployeeIdCard()
                 ,employee.getEmployeeSalary(),employee.getEmployeePhone(),employee.getEmployeeEmail(),employee.getEmployeeAddress()
                 ,employee.getPositionId(),employee.getEducationDegree(),employee.getDivisionId(), employee.getUserId());
