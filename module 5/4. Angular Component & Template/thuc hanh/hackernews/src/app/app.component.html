@@ -1,0 +1,18 @@
+<h2>Today's article</h2>
+<hr>
+<div>
+  <a href="{{article.url}}" target="_blank">{{article.title}}</a>
+</div>
+<hr>
+
+<div class="card" style="width: 18rem;" *ngFor="let art of articles">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <a href="{{art.url}}" target="_blank" class="card-link">{{art.title}}</a>
+    <app-likes></app-likes>
+  </div>
+  <br>
+</div>
+
+
+
