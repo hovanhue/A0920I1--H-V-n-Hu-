@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Istudent} from '../models/Istudent';
 
 @Component({
@@ -7,20 +7,22 @@ import {Istudent} from '../models/Istudent';
   styleUrls: ['./student-information.component.css']
 })
 export class StudentInformationComponent implements OnInit {
-  student: Istudent = {
-    id: 1,
-    name: 'hue',
-    age: 1,
-    mark: 1,
-    avatar: 'https://i.pinimg.com/474x/90/57/0a/90570addee2645866a597530721f37fd.jpg'
-  };
 
-  constructor() { }
+  @Input()
+  studentDetail: Istudent;
+
+  @Output()
+  // khai báo 1 sự kiện
+  throwCurrentMark = new EventEmitter();
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
 
-  changeMark(mark: number) {
-    this.student.mark = mark;
+  changerMark(mark: number){
+    this.studentDetail.mark = mark;
+    this.throwCurrentMark.emit(mark);
   }
 }

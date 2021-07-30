@@ -1,13 +1,15 @@
 
 
-<div class="card" style="width: 18rem;">
-  <img [src]="student.avatar" class="card-img-top">
+<div class="card" style="width: 18rem;" *ngIf="studentDetail">
+  <img [src]="studentDetail.avatar" class="card-img-top">
   <div class="card-body">
-    <h5>ID: {{student.id}}</h5>
-    <p>Name: {{student.name}}</p>
-    <p>Age: {{student.age}}</p>
-    <p>Mark: {{student.mark}}</p>
-    <label>Chấm điểm: <input [(ngModel)]="student.mark" type="number"></label> <!-- two-way binding -->
+    <h5>ID: {{studentDetail.id}}</h5>
+    <p>Name: {{studentDetail.name}}</p>
+    <p>Age: {{studentDetail.age}}</p>
+    <p>Mark: {{studentDetail.mark}}</p>
+    <label>Chấm điểm: <input type="number" min="0" max="10" (change)="changerMark($event.target.value)"></label>
+
+    <!--    <label>Chấm điểm: <input [(ngModel)]="student.mark" type="number"></label> &lt;!&ndash; two-way binding &ndash;&gt;-->
   </div>
 </div>
 

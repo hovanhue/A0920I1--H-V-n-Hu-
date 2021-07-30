@@ -21,10 +21,10 @@
     <td *ngIf="student.mark >= 5" class="text-success">Pass</td>
     <td *ngIf="student.mark < 5" class="text-danger">Fail</td>
     <td>
-      <button type="button" class="btn btn-info" (click)="displayFormDetails(student.id)">Details</button>
+      <button type="button" class="btn btn-info" (click)="displayFormDetails(student)">Details</button>
     </td>
   </tr>
   </tbody>
 </table>
 
-<app-student-information></app-student-information>
+<app-student-information (throwCurrentMark)="catchMark($event)" [studentDetail]="studentDetails"></app-student-information>

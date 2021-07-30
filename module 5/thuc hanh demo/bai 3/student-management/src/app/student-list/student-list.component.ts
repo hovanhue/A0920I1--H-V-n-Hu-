@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Istudent} from '../models/Istudent';
 
 @Component({
@@ -31,12 +31,20 @@ export class StudentListComponent implements OnInit {
       avatar: 'https://i.pinimg.com/474x/90/57/0a/90570addee2645866a597530721f37fd.jpg'
     }
 ];
+
+  studentDetails: Istudent;
+  // để hứng dữ liệu từ component cha truyền sang
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  displayFormDetails(id: number) {
+  displayFormDetails(value) {
+    this.studentDetails = value;
+  }
 
+  catchMark($event) {
+    this.studentDetails.mark = $event;
+    console.log('nhận giá trị từ component cha; ' + $event);
   }
 }

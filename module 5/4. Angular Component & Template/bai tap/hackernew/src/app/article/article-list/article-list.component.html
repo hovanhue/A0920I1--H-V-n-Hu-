@@ -1,0 +1,21 @@
+<h2>Today's Article</h2>
+<hr>
+<div >
+  <a class="btn btn-light" [routerLink]="['/create-article']" >Create Article</a>
+  <table class="table table-striped table-hover" style="color: blue">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Like </th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let article of articles">
+      <td>{{article.id}}</td>
+      <td><a href="{{article.url}}" target="_blank">{{article.title}}</a></td>
+      <td> <app-like></app-like> </td>
+      <td><input type="button" [routerLink]="['/article-update/', article.id]" value="Update"/></td>
+    </tr>
+  </table>
+</div>
+<!--<app-update-article (sendArticle)="updateArticle($event)" ></app-update-article>-->
+<hr>

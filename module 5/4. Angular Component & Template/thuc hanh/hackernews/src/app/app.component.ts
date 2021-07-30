@@ -33,4 +33,11 @@ export class AppComponent {
       url: 'https://ruslanspivak.com/lsbaws-part1/'
     }
   ];
+url: string;
+title: string;
+
+  updateArticle() {
+   this.article.url = this.url;
+   this.article.title = this.title;
+  }
 }
