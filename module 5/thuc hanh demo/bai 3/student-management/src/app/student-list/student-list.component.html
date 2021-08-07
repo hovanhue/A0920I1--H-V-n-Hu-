@@ -1,4 +1,11 @@
-<h1>Student List</h1>
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h3 style="color: aliceblue">Student List</h3>
+    <div class="d-flex">
+      <a style="color: aliceblue" class="btn btn-info" routerLink="/create">Add Student</a>
+    </div>
+  </div>
+</nav>
 <table class="table table-dark">
   <thead>
   <tr>
@@ -21,7 +28,10 @@
     <td *ngIf="student.mark >= 5" class="text-success">Pass</td>
     <td *ngIf="student.mark < 5" class="text-danger">Fail</td>
     <td>
-      <button type="button" class="btn btn-info" (click)="displayFormDetails(student)">Details</button>
+<!--      <button type="button" class="btn btn-warning" (click)="displayFormDetails(student)">Details</button>-->
+      <a class="btn btn-info" [routerLink]="['details',student.id]">Details</a> |
+      <a class="btn btn-warning" routerLink="edit">Edit</a> |
+      <a class="btn btn-danger" [routerLink]="['delete',student.id]">Delete</a>
     </td>
   </tr>
   </tbody>

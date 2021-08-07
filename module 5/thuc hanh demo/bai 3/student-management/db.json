@@ -1,0 +1,32 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Huệ",
+      "age": "10",
+      "mark": "1",
+      "avatar": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F474x%2F90%2F57%2F0a%2F90570addee2645866a597530721f37fd.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F697565429759559617%2F&tbnid=MctNC9YdMXqapM&vet=12ahUKEwippMy5tZzyAhXIBaYKHVwHBQUQMygAegQIARAp..i&docid=81bPbYXu9yxP-M&w=400&h=400&q=img%20avt%20si%C3%AAu%20nh%C3%A2n%20%C4%91%E1%BB%8F&ved=2ahUKEwippMy5tZzyAhXIBaYKHVwHBQUQMygAegQIARAp"
+    },
+    {
+      "id": 2,
+      "name": "Trí",
+      "age": "10",
+      "mark": "1",
+      "avatar": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F474x%2F90%2F57%2F0a%2F90570addee2645866a597530721f37fd.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F697565429759559617%2F&tbnid=MctNC9YdMXqapM&vet=12ahUKEwippMy5tZzyAhXIBaYKHVwHBQUQMygAegQIARAp..i&docid=81bPbYXu9yxP-M&w=400&h=400&q=img%20avt%20si%C3%AAu%20nh%C3%A2n%20%C4%91%E1%BB%8F&ved=2ahUKEwippMy5tZzyAhXIBaYKHVwHBQUQMygAegQIARAp"
+    },
+    {
+      "id": 3,
+      "name": "Việt",
+      "age": "10",
+      "mark": "1",
+      "avatar": "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F474x%2F90%2F57%2F0a%2F90570addee2645866a597530721f37fd.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F697565429759559617%2F&tbnid=MctNC9YdMXqapM&vet=12ahUKEwippMy5tZzyAhXIBaYKHVwHBQUQMygAegQIARAp..i&docid=81bPbYXu9yxP-M&w=400&h=400&q=img%20avt%20si%C3%AAu%20nh%C3%A2n%20%C4%91%E1%BB%8F&ved=2ahUKEwippMy5tZzyAhXIBaYKHVwHBQUQMygAegQIARAp"
+    },
+    {
+      "id": "20",
+      "name": "3",
+      "age": "03",
+      "mark": "02",
+      "avatar": "C:\\fakepath\\90570addee2645866a597530721f37fd.jpeg"
+    }
+  ]
+}

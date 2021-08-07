@@ -14,6 +14,27 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
 import { EmployeeDeleteComponent } from './employee/employee-delete/employee-delete.component';
 import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
+import {Router, RouterModule} from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from './app-routing-module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
+import { ContractListComponent } from './contract/contract-list/contract-list.component';
+import { ContractCreateComponent } from './contract/contract-create/contract-create.component';
+import { ContractEditComponent } from './contract/contract-edit/contract-edit.component';
+import { ContractDeleteComponent } from './contract/contract-delete/contract-delete.component';
+import { ServiceListComponent } from './service/service-list/service-list.component';
+import { ServiceCreateComponent } from './service/service-create/service-create.component';
+import { ServiceEditComponent } from './service/service-edit/service-edit.component';
+import { ServiceDeleteComponent } from './service/service-delete/service-delete.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MatSliderModule } from '@angular/material/slider';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -29,10 +50,31 @@ import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.co
     EmployeeListComponent,
     EmployeeCreateComponent,
     EmployeeDeleteComponent,
-    EmployeeEditComponent
+    EmployeeEditComponent,
+    NavbarComponent,
+    FooterComponent,
+    ContractListComponent,
+    ContractCreateComponent,
+    ContractEditComponent,
+    ContractDeleteComponent,
+    ServiceListComponent,
+    ServiceCreateComponent,
+    ServiceEditComponent,
+    ServiceDeleteComponent,
+    PageNotFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSliderModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatNativeDateModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,129 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "idCustomerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "name": "hue",
+      "dateOfBirth": "20/3/2001",
+      "gender": "Male",
+      "idCard": 123,
+      "phoneNumber": "123",
+      "email": "abc@gmail.com",
+      "address": "quang nam"
+    },
+    {
+      "id": 2,
+      "idCustomerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "name": "tris",
+      "dateOfBirth": "20/3/2001",
+      "gender": "Male",
+      "idCard": 123,
+      "phoneNumber": "123",
+      "email": "abc@gmail.com",
+      "address": "quang nam"
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "name": "3",
+      "dateOfBirth": "",
+      "phoneNumber": "131",
+      "email": "4",
+      "address": "5",
+      "id": 3
+    },
+    {
+      "customerType": "",
+      "name": "",
+      "dateOfBirth": "",
+      "phoneNumber": "",
+      "email": "",
+      "address": "",
+      "id": 4
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "name": "trung",
+      "dateOfBirth": "",
+      "phoneNumber": "131",
+      "email": "213fas@gmail.com1",
+      "address": "2",
+      "id": 5
+    },
+    {
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "name": "huee",
+      "dateOfBirth": "",
+      "gender": "",
+      "idCard": "323",
+      "phoneNumber": "131",
+      "email": "1qda@gmail.com",
+      "address": "da nang",
+      "id": 6
+    },
+    {
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "name": "trung",
+      "dateOfBirth": "",
+      "gender": "",
+      "idCard": "323",
+      "phoneNumber": "131",
+      "email": "213fas@gmail.com1",
+      "address": "da nang",
+      "id": 7
+    },
+    {
+      "customerType": {
+        "id": 4,
+        "name": "Silver"
+      },
+      "name": "2",
+      "dateOfBirth": "",
+      "gender": "",
+      "idCard": "323",
+      "phoneNumber": "131",
+      "email": "213fas@gmail.com1",
+      "address": "da nang",
+      "id": 8
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ]
+}

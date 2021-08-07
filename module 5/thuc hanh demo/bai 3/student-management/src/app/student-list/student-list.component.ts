@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Istudent} from '../models/Istudent';
+import {StudentService} from '../student-service.service';
 
 @Component({
   selector: 'app-student-list',
@@ -8,43 +9,24 @@ import {Istudent} from '../models/Istudent';
 })
 export class StudentListComponent implements OnInit {
 
-  students: Istudent[] = [
-    {
-      id: 1,
-      name: 'hue',
-      age: 1,
-      mark: 1,
-      avatar: 'https://i.pinimg.com/474x/90/57/0a/90570addee2645866a597530721f37fd.jpg'
-    },
-    {
-      id: 2,
-      name: 'hue',
-      age: 1,
-      mark: 7,
-      avatar: 'https://i.pinimg.com/474x/90/57/0a/90570addee2645866a597530721f37fd.jpg'
-    },
-    {
-      id: 3,
-      name: 'hue',
-      age: 1,
-      mark: 1,
-      avatar: 'https://i.pinimg.com/474x/90/57/0a/90570addee2645866a597530721f37fd.jpg'
-    }
-];
+  students: Istudent[];
 
   studentDetails: Istudent;
   // để hứng dữ liệu từ component cha truyền sang
-  constructor() { }
+  constructor(private studentService: StudentService) { }
 
   ngOnInit(): void {
-  }
-
-  displayFormDetails(value) {
-    this.studentDetails = value;
+    this.studentService.getAllStudent().subscribe(
+      (data) => this.students = data
+    );
   }
 
   catchMark($event) {
     this.studentDetails.mark = $event;
     console.log('nhận giá trị từ component cha; ' + $event);
   }
+
+  // getFormCreate() {
+  //
+  // }
 }

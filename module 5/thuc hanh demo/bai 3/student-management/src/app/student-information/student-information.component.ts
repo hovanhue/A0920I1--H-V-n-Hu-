@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Istudent} from '../models/Istudent';
+import {StudentService} from '../student-service.service';
+import {ActivatedRoute, ParamMap} from '@angular/router';
 
 @Component({
   selector: 'app-student-information',
@@ -14,11 +16,18 @@ export class StudentInformationComponent implements OnInit {
   @Output()
   // khai báo 1 sự kiện
   throwCurrentMark = new EventEmitter();
-  constructor() {
+  constructor(private studentService: StudentService, private activatedRoute: ActivatedRoute) {
 
   }
-
+idStudent;
   ngOnInit(): void {
+    this.activatedRoute.paramMap.subscribe((paramPap: ParamMap) => {
+      // tslint:disable-next-line:radix
+      this.idStudent = parseInt(paramPap.get('id'));
+      this.studentService.getStudentId(this.idStudent).subscribe((data) => {
+        this.studentDetail = data;
+      });
+    });
   }
 
   changerMark(mark: number){
