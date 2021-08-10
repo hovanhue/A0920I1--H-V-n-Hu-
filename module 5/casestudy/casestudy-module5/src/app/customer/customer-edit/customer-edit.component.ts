@@ -28,9 +28,8 @@ export class CustomerEditComponent implements OnInit {
     this.customerService.getAllCustomerType().subscribe((data) => {
       this.customerTypeList = data;
     });
-    this.customerService.getCustomerById(this.router.snapshot.params.id).subscribe((data) => {
-      this.editCustomer.setValue(data);
-    };
+
+
   }
 
 }

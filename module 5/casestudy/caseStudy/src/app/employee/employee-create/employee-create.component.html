@@ -1,0 +1,88 @@
+<div class="container">
+  <h3 style="align-items: center">Create Employee</h3>
+
+<form [formGroup]="createEmployee" (ngSubmit)="onSubmit(createEmployee)">
+  <div class="form-group row">
+    <label for="inputName" class="col-sm-2 col-form-label">Full Name</label>
+    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+      <input type="text" class="form-control" id="inputName" formControlName="name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Position</label>
+    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+      <select class="custom-select" formControlName="position">
+        <option *ngFor="let items of positionList" [ngValue]="items">{{items.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Education Degree</label>
+    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+      <select class="custom-select" formControlName="educationDegree">
+        <option *ngFor="let items of educationDegreeList" [ngValue]="items">{{items.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Division</label>
+    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+      <select class="custom-select" formControlName="division">
+        <option *ngFor="let items of divisionList" [ngValue]="items">{{items.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputName" class="col-sm-2 col-form-label">BirthDay</label>
+    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate" formControlName="dateOfBirth">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputIdCard" class="col-sm-2 col-form-label">ID Card</label>
+    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+      <input type="text" class="form-control" id="inputIdCard" formControlName="idCard">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputSalary" class="col-sm-2 col-form-label">Salary</label>
+    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+      <input type="text" class="form-control" id="inputSalary" formControlName="salary">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPhoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
+    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+      <input type="text" class="form-control" id="inputPhoneNumber" formControlName="phoneNumber">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+      <input type="email" class="form-control" id="inputEmail" formControlName="email">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
+    <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+      <input type="text" class="form-control" id="inputAddress" formControlName="address">
+    </div>
+  </div>
+
+  <div class="_buttonSubmit">
+    <a [routerLink]="['/list-employee']">back</a>
+    <div class="_back">
+      <button [disabled]="createEmployee.invalid" type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </div>
+</form>
+</div>
+
+
+

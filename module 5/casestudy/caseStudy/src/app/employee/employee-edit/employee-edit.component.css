@@ -1,0 +1,8 @@
+._buttonSubmit{
+  display: inline;
+  /*position: absolute;*/
+}
+._buttonSubmit > ._back{
+  display: inline;
+  padding-left: 60%;
+}

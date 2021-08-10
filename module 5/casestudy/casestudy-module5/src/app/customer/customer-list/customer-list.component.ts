@@ -9,8 +9,8 @@ import {CustomerServiceService} from '../../../../service/customer/CustomerServi
   styleUrls: ['./customer-list.component.css']
 })
 export class CustomerListComponent implements OnInit {
-customerList: ICustomers [];
-customerType: ICustomerType[];
+customerList: ICustomers [] = [];
+customerType: ICustomerType[] = [];
 
   constructor(private service: CustomerServiceService) { }
 

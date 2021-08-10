@@ -23,9 +23,13 @@ import {ContractComponent} from './contract/contract.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {NavbarComponent} from './navbar/navbar.component';
 
+// @ts-ignore
 const routes: Routes = [
-      {path: 'create-customer', component: CustomerCreateComponent},
-      {path: 'list-customer', component: CustomerListComponent},
+      {path: 'customer', component: CustomerCreateComponent,
+      children: [
+        {path: '/create', component: CustomerCreateComponent},
+        {path: '/list', component: CustomerListComponent}
+      ]},
       {path: 'edit-customer/:id', component: CustomerEditComponent},
       {path: 'delete-customer/:id', component: CustomerDeleteComponent},
       {path: 'create-employee', component: EmployeeCreateComponent},

@@ -12,24 +12,19 @@ export class CustomerServiceService {
   API_URL_CUSTOMER = 'http://localhost:3000/customers';
   API_URL_CUSTOMERTYPE = 'http://localhost:3000/customerType';
   constructor(private httpClient: HttpClient) { }
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  };
 
-  getAllCustomer(){
+  getAllCustomer(): Observable<ICustomers[]>{
     console.log('customer' + this.httpClient.get(this.API_URL_CUSTOMER));
-    return this.httpClient.get(this.API_URL_CUSTOMER);
+    return this.httpClient.get<ICustomers[]>(this.API_URL_CUSTOMER);
   }
 
-  getAllCustomerType(){
+  getAllCustomerType(): Observable<ICustomerType[]>{
     console.log('customerType' + this.httpClient.get(this.API_URL_CUSTOMERTYPE));
-    return this.httpClient.get(this.API_URL_CUSTOMERTYPE);
+    return this.httpClient.get<ICustomerType[]>(this.API_URL_CUSTOMERTYPE);
   }
 
-  addNewCustomer(customer: ICustomers){
-    return this.httpClient.post<ICustomers>(this.API_URL_CUSTOMER, customer, this.httpOptions);
+  addNewCustomer(customer: ICustomers): Observable<ICustomers>{
+    return this.httpClient.post<ICustomers>(this.API_URL_CUSTOMER, customer);
   }
 
   getCustomerById(id: number): Observable<ICustomers>{
@@ -41,6 +36,6 @@ export class CustomerServiceService {
   }
 
   updateCustomer(customer: ICustomers): Observable<ICustomers>{
-    return this.httpClient.put<ICustomers>(this.API_URL_CUSTOMER, customer, this.httpOptions);
+    return this.httpClient.put<ICustomers>(this.API_URL_CUSTOMER, customer);
   }
 }
