@@ -6,6 +6,7 @@
     <label for="inputName" class="col-sm-2 col-form-label">Full Name</label>
     <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
       <input type="text" class="form-control" id="inputName" formControlName="name">
+      <small *ngIf="createEmployee.get('name').invalid && createEmployee.touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
   </div>
   <div class="form-group row">
@@ -14,6 +15,7 @@
       <select class="custom-select" formControlName="position">
         <option *ngFor="let items of positionList" [ngValue]="items">{{items.name}}</option>
       </select>
+      <small *ngIf="createEmployee.get('position').invalid && createEmployee.get('position').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
   </div>
   <div class="form-group row">
@@ -22,6 +24,7 @@
       <select class="custom-select" formControlName="educationDegree">
         <option *ngFor="let items of educationDegreeList" [ngValue]="items">{{items.name}}</option>
       </select>
+      <small *ngIf="createEmployee.get('educationDegree').invalid && createEmployee.get('educationDegree').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
   </div>
   <div class="form-group row">
@@ -30,6 +33,7 @@
       <select class="custom-select" formControlName="division">
         <option *ngFor="let items of divisionList" [ngValue]="items">{{items.name}}</option>
       </select>
+      <small *ngIf="createEmployee.get('division').invalid && createEmployee.get('division').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
   </div>
   <div class="form-group row">
@@ -41,6 +45,7 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+      <small *ngIf="createEmployee.get('dateOfBirth').invalid && createEmployee.get('dateOfBirth').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
   </div>
 
@@ -48,30 +53,35 @@
     <label for="inputIdCard" class="col-sm-2 col-form-label">ID Card</label>
     <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
       <input type="text" class="form-control" id="inputIdCard" formControlName="idCard">
+      <small *ngIf="createEmployee.get('idCard').invalid && createEmployee.get('idCard').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
   </div>
   <div class="form-group row">
     <label for="inputSalary" class="col-sm-2 col-form-label">Salary</label>
     <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
       <input type="text" class="form-control" id="inputSalary" formControlName="salary">
+      <small *ngIf="createEmployee.get('salary').invalid && createEmployee.get('salary').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPhoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
     <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
       <input type="text" class="form-control" id="inputPhoneNumber" formControlName="phoneNumber">
+      <small *ngIf="createEmployee.get('phoneNumber').invalid && createEmployee.get('phoneNumber').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
   </div>
   <div class="form-group row">
     <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
       <input type="email" class="form-control" id="inputEmail" formControlName="email">
+      <small *ngIf="createEmployee.get('email').invalid && createEmployee.get('email').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
   </div>
   <div class="form-group row">
     <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
     <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
       <input type="text" class="form-control" id="inputAddress" formControlName="address">
+      <small *ngIf="createEmployee.get('address').invalid && createEmployee.get('address').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
   </div>
 

@@ -1,0 +1,64 @@
+<div class="container">
+  <h3 style="align-items: center">Change Information Of Service</h3>
+
+  <form [formGroup]="updateService" (ngSubmit)="onSubmit(updateService)">
+
+    <div class="form-group row">
+      <label for="inputNameService" class="col-sm-2 col-form-label">NameService</label>
+      <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+        <input type="text" class="form-control" id="inputNameService" formControlName="nameService">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputArea" class="col-sm-2 col-form-label">Area</label>
+      <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+        <input type="text" class="form-control" id="inputArea" formControlName="area">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputFloor" class="col-sm-2 col-form-label">Floor</label>
+      <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+        <input type="text" class="form-control" id="inputFloor" formControlName="floor">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputMaxPerson" class="col-sm-2 col-form-label">Max Person</label>
+      <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+        <input type="text" class="form-control" id="inputMaxPerson" formControlName="maxPerson">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputTotal" class="col-sm-2 col-form-label">Cost Total</label>
+      <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+        <input type="text" class="form-control" id="inputTotal" formControlName="total">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label">Service Type</label>
+      <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+        <select class="custom-select" formControlName="serviceType">
+          <option [selected]="items.name == updateService.controls.serviceType.value.name"
+            *ngFor="let items of serviceTypeList" [ngValue]="items">{{items.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputStatus" class="col-sm-2 col-form-label">Status</label>
+      <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
+        <input type="text" class="form-control" id="inputStatus" formControlName="status">
+      </div>
+    </div>
+
+    <div class="_buttonSubmit">
+      <a [routerLink]="['/list-service']" >back</a>
+      <div class="_back">
+        <button [disabled]="updateService.invalid" type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+

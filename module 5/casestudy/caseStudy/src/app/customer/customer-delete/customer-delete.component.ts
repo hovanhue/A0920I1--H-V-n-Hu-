@@ -10,13 +10,11 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 })
 export class CustomerDeleteComponent implements OnInit {
   id: number;
-  name: string;
 
   constructor(
     private customerService: CustomerService, private router: Router,
     @Inject(MAT_DIALOG_DATA) public data: any) {
     this.id = data.id;
-    this.name = data.name;
   }
 
   ngOnInit(): void {

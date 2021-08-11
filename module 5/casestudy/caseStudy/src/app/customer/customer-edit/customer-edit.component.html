@@ -9,12 +9,14 @@
           <option [selected]="items.nameCustomerType == updateCustomer.controls.customerType.value.nameCustomerType"
                   *ngFor="let items of customerTypeList" [ngValue]="items">{{items.nameCustomerType}}</option>
         </select>
+        <small *ngIf="updateCustomer.get('customerType').invalid && updateCustomer.get('customerType').touched" class="text-danger">Vui lòng nhập!!</small>
       </div>
     </div>
     <div class="form-group row">
       <label for="inputName" class="col-sm-2 col-form-label">Full Name</label>
       <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
         <input type="text" class="form-control" id="inputName" formControlName="name">
+        <small *ngIf="updateCustomer.get('name').invalid && updateCustomer.get('name').touched" class="text-danger">Vui lòng nhập!!</small>
       </div>
     </div>
     <div class="form-group row">
@@ -26,6 +28,7 @@
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
+      <small *ngIf="updateCustomer.get('birthDate').invalid && updateCustomer.get('birthDate').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
     <!--      </div>-->
     <div class="form-group row">
@@ -35,36 +38,43 @@
         <mat-radio-button value="Male">Male</mat-radio-button>
         <mat-radio-button value="Female">Female</mat-radio-button>
       </mat-radio-group>
+      <small *ngIf="updateCustomer.get('gender').invalid && updateCustomer.get('gender').touched" class="text-danger">Vui lòng nhập!!</small>
     </div>
     <!--    </div>-->
     <div class="form-group row">
       <label for="inputidCard" class="col-sm-2 col-form-label">ID Card</label>
       <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
         <input type="text" class="form-control" id="inputidCard" formControlName="idCard">
+        <small *ngIf="updateCustomer.get('idCard').invalid && updateCustomer.get('idCard').touched" class="text-danger">Vui lòng nhập!!</small>
       </div>
     </div>
     <div class="form-group row">
       <label for="inputPhoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
       <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
         <input type="text" class="form-control" id="inputPhoneNumber" formControlName="phone">
+        <small *ngIf="updateCustomer.get('phone').invalid && updateCustomer.get('phone').touched" class="text-danger">Vui lòng nhập!!</small>
       </div>
     </div>
     <div class="form-group row">
       <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
       <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
         <input type="email" class="form-control" id="inputEmail" formControlName="email">
+        <small *ngIf="updateCustomer.get('email').invalid && updateCustomer.get('email').touched" class="text-danger">Vui lòng nhập!!</small>
       </div>
     </div>
     <div class="form-group row">
       <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
       <div class="col-sm-8 col-md-8 col-lg-6 col-xl-6">
         <input type="text" class="form-control" id="inputAddress" formControlName="address">
+        <small *ngIf="updateCustomer.get('address').invalid && updateCustomer.get('address').touched" class="text-danger">Vui lòng nhập!!</small>
       </div>
     </div>
 
-    <div class="container-fluid">
-      <button [disabled]="updateCustomer.invalid" type="submit" class="btn btn-success">Submit</button>
-      <a [routerLink]="['/list-customer']" style="padding-left: 50%">back</a>
+    <div class="_buttonSubmit">
+      <a [routerLink]="['/list-customer']">back</a>
+      <div class="_back">
+        <button [disabled]="updateCustomer.invalid" type="submit" class="btn btn-success">Submit</button>
+      </div>
     </div>
   </form>
 </div>

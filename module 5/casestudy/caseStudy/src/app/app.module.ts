@@ -5,10 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
-import { CustomerListComponent } from './customer/customer-list/customer-list.component';
-import { CustomerCreateComponent } from './customer/customer-create/customer-create.component';
-import { CustomerEditComponent } from './customer/customer-edit/customer-edit.component';
-import { CustomerDeleteComponent } from './customer/customer-delete/customer-delete.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {MatSliderModule} from "@angular/material/slider";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -26,34 +22,42 @@ import {EmployeeRoutingModule} from "./employee/employee-routing.module";
 import {CustomerService} from "../../service/customer/CustomerService";
 import {EmployeeService} from "../../service/employee/employee.service";
 import {EmployeeModule} from "./employee/employee.module";
+import {ServiceService} from "../../service/service/service.service";
+import {ContractService} from "../../service/contract/contract.service";
+import {ServiceModule} from "./service/service.module";
+import {ContractModule} from "./contract/contract.module";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSliderModule,
-    MatDialogModule,
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    MatSliderModule,
+    MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,
     MatDatepickerModule,
     MatRadioModule,
     MatInputModule,
     MatNativeDateModule,
-    AppRoutingModule,
     CustomerModule,
-    EmployeeModule
+    EmployeeModule,
+    ServiceModule,
+    ContractModule
+
   ],
-  providers: [CustomerService, EmployeeService],
+  providers: [CustomerService, EmployeeService, ServiceService, ContractService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
